@@ -1,0 +1,70 @@
+﻿@model DevFramework.Northwind.MvcWebUI.Models.SporcuFotoListViewModel
+
+@{
+
+    //WebGrid webGrid = new WebGrid(source: Model, canSort: false, canPage: false);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style type="text/css">
+        /*body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        .Grid {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+            .Grid th {
+                background-color: #F7F7F7;
+                font-weight: bold;
+            }
+
+            .Grid th, .Grid td {
+                padding: 5px;
+                border: 1px solid #ccc;
+            }
+
+            .Grid, .Grid table td {
+                border: 0px solid #ccc;
+            }
+
+                .Grid img {
+                    height: 150px;
+                    width: 150px;
+                    cursor: pointer;
+                }
+
+        #dialog img {
+            height: 550px;
+            width: 575px;
+            cursor: pointer;
+        }*/
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("Index", "SporcuFoto", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="form-group">
+            <label>File İnput</label>
+            <input type="file" name="postedFile" />
+        </div>
+        <div class="form-group">
+            <input type="submit" id="btnUpload" value="Yükle" />
+        </div>
+
+    }
+    <hr />
+    @foreach (var item in Model.SporcuFotos)
+    {
+        <img width="300" height="200" alt="@item.Id" src="data:image/jpg;base64,@Convert.ToBase64String(item.Data)" />
+    }
+</body>
+</html>

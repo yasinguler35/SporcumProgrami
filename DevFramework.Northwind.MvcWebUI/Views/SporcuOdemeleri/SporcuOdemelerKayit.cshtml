@@ -1,0 +1,135 @@
+﻿@model DevFramework.Northwind.MvcWebUI.Models.SporcuOdemeleriListViewModel
+
+@{
+    Layout = null;
+}
+
+
+@using (Html.BeginForm("SporcuOdemelerKayit", "SporcuOdemeleri", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model.SporcuOdemeGet != null && Model.SporcuOdemeGet.Id > 0)
+    {
+        @Html.HiddenFor(a => a.SporcuOdemeGet.Id)
+        @Html.HiddenFor(a => a.SporcuOdemeGet.SporcuId)
+    }
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Ocak</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.Ocak, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.Ocak)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Şubat</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.Subat, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.Subat)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Mart</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.Mart, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.Mart)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Nisan</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.Nisan, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.Nisan)
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Mayıs</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.Mayis, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.Mayis)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Haziran</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.Haziran, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.Haziran)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Temmuz</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.Temmuz, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.Temmuz)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Ağustos</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.Agustos, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.Agustos)
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Eylül</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.Eylul, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.Eylul)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Ekim</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.Ekim, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.Haziran)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Kasım</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.Kasim, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.Kasim)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Aralık</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.Aralik, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.Aralik)
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Yıl</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.Yil, new { @Value = (Model.SporcuOdemeGet!=null) ? Model.SporcuOdemeGet.Yil.ToString() :DateTime.Now.Year.ToString(), @class = "form-control", @required = "required"})
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.Yil)
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Kayıt Tarihi</label>
+                    @Html.TextBoxFor(a => a.SporcuOdemeGet.KayitTarihi, new { @Value = (Model.SporcuOdemeGet != null) ? Model.SporcuOdemeGet.KayitTarihi.ToString() : DateTime.Now.ToString("dd.MM.yyyy"), @class = "form-control", @required = "required" })
+                    @Html.ValidationMessageFor(a => a.SporcuOdemeGet.KayitTarihi)
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-12">
+            <div class="col-md-6">
+                <input class="btn btn-success" type="submit" value="KAYIT" />
+            </div>
+        </div>
+     </div>
+
+   
+
+  
+}
+

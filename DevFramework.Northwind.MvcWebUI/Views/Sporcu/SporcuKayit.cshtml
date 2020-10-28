@@ -1,0 +1,70 @@
+﻿@model DevFramework.Northwind.MvcWebUI.Models.SporcuListViewModel
+@{
+    Layout = null;
+}
+
+
+@using (Html.BeginForm("SporcuKayit", "Sporcu", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model.SporcuGet != null && Model.SporcuGet.Id > 0)
+    {
+        @Html.HiddenFor(a => a.SporcuGet.Id)
+    }
+
+    <div class="form-group">
+        <label>Ad Soyad</label>
+        @Html.TextBoxFor(a => a.SporcuGet.AdSoyad, new { @class = "form-control", @required = "required" })
+        @Html.ValidationMessageFor(a => a.SporcuGet.AdSoyad)
+    </div>
+    <div class="form-group">
+        <label>Telefon No</label>
+        @Html.TextBoxFor(a => a.SporcuGet.TelNo, new { @class = "form-control", @required = "required" })
+        @Html.ValidationMessageFor(a => a.SporcuGet.TelNo)
+    </div>
+    <div class="form-group">
+        <label>Kuşak Seviyesi</label>
+        @Html.TextBoxFor(a => a.SporcuGet.KusakSeviyesi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.SporcuGet.KusakSeviyesi)
+    </div>
+    <div class="form-group">
+        <label>Sporcu Kategori</label>
+        @Html.DropDownListFor(a => a.SporcuGet.KategoriAdi, new SelectList(ViewBag.sporkategorigoster, "KategoriAdi", "KategoriAdi"), "Seçiniz", new { @class = "form-control", @required = "required" })
+        @Html.ValidationMessageFor(a => a.SporcuGet.KategoriAdi)
+    </div>
+    <div class="form-group">
+        <label>Foto Url Seçiniz</label>
+        @Html.DropDownListFor(a => a.SporcuGet.FotoID, new SelectList(ViewBag.sporfotogoster, "Id", "Name"), "Seçiniz", new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.SporcuGet.FotoID)
+    </div>
+    <div class="form-group">
+        <label>Lisans Foto Url Seçiniz</label>
+        @Html.DropDownListFor(a => a.SporcuGet.LisansFotoID, new SelectList(ViewBag.sporfotogoster, "Id", "Name"), "Seçiniz", new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.SporcuGet.LisansFotoID)
+    </div>
+    <div class="form-group">
+        <label>Doğum Tarihi</label>
+        @Html.TextBoxFor(a => a.SporcuGet.DogumTarihi, "{0:d}",new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(a => a.SporcuGet.DogumTarihi)
+    </div>
+    <div class="form-group">
+        <label>Açıklama</label>
+        @Html.TextAreaFor(a => a.SporcuGet.Aciklama, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.SporcuGet.Aciklama)
+    </div>
+    <div class="form-group">
+        <label>Veli Adı</label>
+        @Html.TextBoxFor(a => a.SporcuGet.VeliAdi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.SporcuGet.VeliAdi)
+    </div>
+    <div class="form-group">
+        <label>Veli Tel No</label>
+        @Html.TextBoxFor(a => a.SporcuGet.VeliTelNo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.SporcuGet.VeliTelNo)
+    </div>
+
+    <div>
+        <input class="btn btn-success" type="submit" value="KAYIT" />
+    </div>
+}
+
+

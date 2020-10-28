@@ -1,0 +1,27 @@
+﻿
+@model DevFramework.Northwind.MvcWebUI.Models.SporcuKategoriListViewModel
+@{
+    Layout = null;
+}
+
+
+@using (Html.BeginForm("SporcuKategoriKayit", "SporcuKategori", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model.SporcuKategoriGet != null && Model.SporcuKategoriGet.Id > 0)
+    {
+        @Html.HiddenFor(a => a.SporcuKategoriGet.Id)
+    }
+
+    <div class="form-group">
+        <label>Kategori</label>
+        @Html.TextBoxFor(a => a.SporcuKategoriGet.KategoriAdi, new { @class = "form-control", @required = "required" })
+        @Html.ValidationMessageFor(a => a.SporcuKategoriGet.KategoriAdi)
+    </div>
+
+
+    <div>
+        <input class="btn btn-success" type="submit" value="KAYIT" />
+    </div>
+}
+
+
