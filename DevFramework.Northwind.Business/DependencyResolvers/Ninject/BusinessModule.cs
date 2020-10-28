@@ -35,7 +35,7 @@ namespace DevFramework.Northwind.Business.DependencyResolvers.Ninject
 
             Bind<ISporcuKategoriService>().To<SporcuKategoriManager>();
             Bind<ISporcuKategoriDal>().To<EfSporcuKategoriDal>();
-
+            //Sporcu Ödemleri 
             Bind<ISporcuOdemeleriService>().To<SporcuOdemeleriManager>();
             Bind<ISporcuOdemeleriDal>().To<EfSporcuOdemeleriDal>();
 
