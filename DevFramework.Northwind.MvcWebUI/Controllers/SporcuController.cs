@@ -3,6 +3,7 @@ using DevFramework.Northwind.Business.Abstract;
 using DevFramework.Northwind.Business.DependencyResolvers.Ninject;
 using DevFramework.Northwind.DataAccess.Abstract;
 using DevFramework.Northwind.MvcWebUI.Models;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
 {
     public class SporcuController : Controller
     {
-  
+        private IValidator validator;
         private ISporcuService _sporcuService= InstanceFactory.GetInstance<ISporcuService>();
         private ISporcuFotoService _sporcuFotoService;
         private ISporcuKategoriService _sporcuKategoriService;
@@ -79,7 +80,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         [HttpPost]
         public ActionResult SporcuKayit(SporcuListViewModel sporcus)
         {
-           
+            
             bool status = false;
             if (ModelState.IsValid)
             {

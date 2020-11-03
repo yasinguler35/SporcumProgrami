@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace DevFramework.Northwind.Business.ValidationRules.FluentValidation
 {
-    public class KusaklarValidator : AbstractValidator<Kusaklar>
+    public class KusakOdemeleriValidatior : AbstractValidator<KusakOdemeleri>
     {
-        public KusaklarValidator()
+        public KusakOdemeleriValidatior()
         {
-            RuleFor(p => p.KusakAdi).NotEmpty();
+
         }
     }
 }

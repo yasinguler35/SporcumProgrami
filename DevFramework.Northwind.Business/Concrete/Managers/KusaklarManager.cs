@@ -24,7 +24,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
             _kusaklarDal = kusaklarDal;
             _mapper = mapper;
         }
-        [FluentValidationAspect(typeof(KusaklarValidator))]
+        [FluentValidationAspect(typeof(KusaklarValidatior))]
         [CacheRemoveAspect(typeof(MemoryCacheManager))]
         public Kusaklar Add(Kusaklar kusaklar)
         {
@@ -47,7 +47,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         {
             return _kusaklarDal.Get(p => p.Id == id);
         }
-        [FluentValidationAspect(typeof(KusaklarValidator))]
+        [FluentValidationAspect(typeof(KusaklarValidatior))]
         public Kusaklar Update(Kusaklar kusaklar)
         {
             return _kusaklarDal.Update(kusaklar);
