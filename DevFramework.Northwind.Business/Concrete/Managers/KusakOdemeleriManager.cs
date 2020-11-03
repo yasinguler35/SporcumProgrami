@@ -11,6 +11,7 @@ using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
 using DevFramework.Core.Aspects.Postsharp.CacheAspects;
 using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using DevFramework.Core.Aspects.Postsharp.PerformanceAspects;
+using DevFramework.Northwind.Business.ValidationRules.FluentValidation;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
@@ -23,7 +24,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
             _kusakOdemeleriDal = kusakOdemeleriDal;
             _mapper = mapper;
         }
-        //[FluentValidationAspect(typeof(KusakOdemeleriValidator))]
+        [FluentValidationAspect(typeof(KusakOdemeleriValidator))]
         [CacheRemoveAspect(typeof(MemoryCacheManager))]
         public KusakOdemeleri Add(KusakOdemeleri kusakOdemeleri)
         {
@@ -46,7 +47,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         {
             return _kusakOdemeleriDal.Get(p => p.Id == id);
         }
-        //[FluentValidationAspect(typeof(KusaklarValidator))]
+        [FluentValidationAspect(typeof(KusakOdemeleriValidator))]
         public KusakOdemeleri Update(KusakOdemeleri kusakOdemeleri)
         {
             return _kusakOdemeleriDal.Update(kusakOdemeleri);
