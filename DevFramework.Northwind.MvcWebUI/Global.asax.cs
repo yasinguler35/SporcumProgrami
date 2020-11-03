@@ -10,7 +10,6 @@ using System.Web.Security;
 using DevFramework.Core.CrossCuttingConcerns.Security.Web;
 using DevFramework.Core.Utilities.Mvc.Infrastructure;
 using DevFramework.Northwind.Business.DependencyResolvers.Ninject;
-using FluentValidation.Mvc;
 
 namespace DevFramework.Northwind.MvcWebUI
 {
@@ -20,7 +19,6 @@ namespace DevFramework.Northwind.MvcWebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            FluentValidationModelValidatorProvider.Configure();
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule(), new AutoMapperModule(),new ValidationModule()));
             //ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new ServiceModule(),new AutoMapperModule()));
         }
