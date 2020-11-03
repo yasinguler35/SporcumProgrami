@@ -79,6 +79,7 @@
     <Compile Include="Abstract\ISporcuKategoriDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfKusaklarDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfKusakOdemeleriDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfProductDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfSporcuDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfSporcuFotoDal.cs" />
