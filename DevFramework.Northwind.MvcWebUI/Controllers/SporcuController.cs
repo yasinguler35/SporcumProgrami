@@ -1,5 +1,6 @@
 ﻿
 using DevFramework.Northwind.Business.Abstract;
+using DevFramework.Northwind.Business.DependencyResolvers.Ninject;
 using DevFramework.Northwind.DataAccess.Abstract;
 using DevFramework.Northwind.MvcWebUI.Models;
 using System;
@@ -12,8 +13,8 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
 {
     public class SporcuController : Controller
     {
-
-        private ISporcuService _sporcuService;
+  
+        private ISporcuService _sporcuService= InstanceFactory.GetInstance<ISporcuService>();
         private ISporcuFotoService _sporcuFotoService;
         private ISporcuKategoriService _sporcuKategoriService;
         //private ISporcuDal _sporcuDal;
@@ -78,6 +79,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         [HttpPost]
         public ActionResult SporcuKayit(SporcuListViewModel sporcus)
         {
+           
             bool status = false;
             if (ModelState.IsValid)
             {
