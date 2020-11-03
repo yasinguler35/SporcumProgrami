@@ -413,6 +413,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\HtmlHelpers.cs" />
+    <Compile Include="Models\KusaklarListViewModel.cs" />
     <Compile Include="Models\ProductListViewModel.cs" />
     <Compile Include="Models\SporcuFotoListViewModel.cs" />
     <Compile Include="Models\SporcuKategoriListViewModel.cs" />
@@ -514,6 +515,8 @@
     <Content Include="Views\SporcuOdemeleri\Aylik.cshtml" />
     <Content Include="Views\SporcuOdemeleri\SporcuOdemeleriList.cshtml" />
     <Content Include="Views\SporcuOdemeleri\SporcuOdemelerKayit.cshtml" />
+    <Content Include="Views\Kusaklar\Index.cshtml" />
+    <Content Include="Views\Kusaklar\KusaklarList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
