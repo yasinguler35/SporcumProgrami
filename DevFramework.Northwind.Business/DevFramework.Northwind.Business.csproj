@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IKusaklarService.cs" />
+    <Compile Include="Abstract\IKusakOdemeleriService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\ISporcuFotoService.cs" />
     <Compile Include="Abstract\ISporcuKategoriService.cs" />
