@@ -20,6 +20,7 @@ namespace DevFramework.Northwind.Business.DependencyResolvers.Ninject
             Bind<IValidator<SporcuKategori>>().To<SporcuKategoriValidatior>().InSingletonScope();
             Bind<IValidator<SporcuFoto>>().To<SporcuFotoValidatior>().InSingletonScope();
             Bind<IValidator<Kusaklar>>().To<KusaklarValidator>().InSingletonScope();
+            Bind<IValidator<KusakOdemeleri>>().To<KusakOdemeleriValidator>().InSingletonScope();
         }
     }
 }
