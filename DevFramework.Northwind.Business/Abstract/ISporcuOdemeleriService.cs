@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace DevFramework.Northwind.Business.Abstract
 {
+    [ServiceContract]
     public interface ISporcuOdemeleriService
     {
         [OperationContract]
