@@ -25,8 +25,8 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
         public DbSet<SporcuFoto> SporcuFotoes { get; set; }
         public DbSet<SporcuKategori> SporcuKategoris { get; set; }
         public DbSet<SporcuOdemeleri> SporcuOdemeleris { get; set; }
-
         public DbSet<Kusaklar> Kusaklars { get; set; }
+        public DbSet<KusakOdemeleri> KusakOdemeleris { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ProductMap());
@@ -35,6 +35,7 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
             modelBuilder.Configurations.Add(new SporcuKategoriMap());
             modelBuilder.Configurations.Add(new SporcuOdemeleriMap());
             modelBuilder.Configurations.Add(new KusaklarMap());
+            modelBuilder.Configurations.Add(new KusakOdemeleriMap());
             //
         }
     }
