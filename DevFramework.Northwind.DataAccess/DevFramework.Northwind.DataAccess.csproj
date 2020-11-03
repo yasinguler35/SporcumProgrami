@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IKusaklarDal.cs" />
+    <Compile Include="Abstract\IKusakOdemeleriDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Abstract\ISporcuDal.cs" />
     <Compile Include="Abstract\ISporcuFotoDal.cs" />
