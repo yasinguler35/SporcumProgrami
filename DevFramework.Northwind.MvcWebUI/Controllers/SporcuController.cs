@@ -17,10 +17,10 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         private ISporcuService _sporcuService= InstanceFactory.GetInstance<ISporcuService>();
         private ISporcuFotoService _sporcuFotoService;
         private ISporcuKategoriService _sporcuKategoriService;
-        //private ISporcuDal _sporcuDal;
-        public SporcuController(/*ISporcuDal sporcuDal,*/ ISporcuService sporcuService, ISporcuFotoService sporcuFotoService, ISporcuKategoriService sporcuKategoriService)
+
+        public SporcuController( ISporcuService sporcuService, ISporcuFotoService sporcuFotoService, ISporcuKategoriService sporcuKategoriService)
         {
-            //_sporcuDal = sporcuDal;
+
             _sporcuKategoriService = sporcuKategoriService;
             _sporcuService = sporcuService;
             _sporcuFotoService = sporcuFotoService;
@@ -100,7 +100,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
                         SporcuGet = _sporcuService.Add(sporcus.SporcuGet)
                     };
                  
-                }
+                    }
                     
                     status = true;
                 
