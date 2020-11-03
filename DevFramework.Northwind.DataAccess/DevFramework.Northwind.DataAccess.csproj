@@ -86,6 +86,7 @@
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\CategoryMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\KusaklarMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\KusakOdemeleriMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\ProductMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\SporcuFotoMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\SporcuKategoriMap.cs" />
