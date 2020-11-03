@@ -403,6 +403,7 @@
     <Compile Include="App_Start\MVCGridConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\KusaklarController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SporcuController.cs" />
     <Compile Include="Controllers\SporcuFotoController.cs" />
@@ -528,6 +529,7 @@
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="UploadImage\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Views\Kusak\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
