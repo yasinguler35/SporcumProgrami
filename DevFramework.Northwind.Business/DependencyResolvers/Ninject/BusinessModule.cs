@@ -42,6 +42,9 @@ namespace DevFramework.Northwind.Business.DependencyResolvers.Ninject
             Bind<IKusaklarService>().To<KusaklarManager>();
             Bind<IKusaklarDal>().To<EfKusaklarDal>();
 
+            Bind<IKusakOdemeleriService>().To<KusakOdemeleriManager>();
+            Bind<IKusakOdemeleriDal>().To<EfKusakOdemeleriDal>();
+
             Bind(typeof(IQueryableRepository<>)).To(typeof(EfQueryableRepository<>));
             Bind<DbContext>().To<NorthwindContext>();
             Bind<NHibernateHelper>().To<SqlServerHelper>();
