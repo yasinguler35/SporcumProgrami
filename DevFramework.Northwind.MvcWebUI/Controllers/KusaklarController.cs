@@ -35,6 +35,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             return Json(new { data = model.kusaklars }, JsonRequestBehavior.AllowGet);
 
         }
+        //kusakları getirme forma
         [HttpGet]
         public ActionResult KusaklarKayit(int id)
         {
@@ -44,6 +45,37 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
                 kusaklarGet = _kusaklarService.GetById(id)
             };
             return View(model);
+        }
+        //kusak kaydetme ve güncelleme action
+        [HttpPost]
+        public ActionResult KusaklarKayit(KusaklarListViewModel kusaklars)
+        {
+            bool status = false;
+            if (ModelState.IsValid)
+            {
+
+                if (kusaklars.kusaklarGet.Id > 0)
+                {
+                    //Edit 
+                    var model = new KusaklarListViewModel
+                    {
+                        kusaklarGet = _kusaklarService.Update(kusaklars.kusaklarGet)
+                    };
+                }
+                else
+                {
+                    //Save
+                    var model = new KusaklarListViewModel
+                    {
+                        kusaklarGet = _kusaklarService.Add(kusaklars.kusaklarGet)
+                    };
+
+                }
+
+                status = true;
+
+            }
+            return new JsonResult { Data = new { status = status } };
         }
     }
 }
