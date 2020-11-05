@@ -77,5 +77,29 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             }
             return new JsonResult { Data = new { status = status } };
         }
+        //kusaklari göster 
+        [HttpGet]
+        public ActionResult KusaklarSil(int id)
+        {
+            var model = new KusaklarListViewModel
+            {
+                kusaklarGet = _kusaklarService.GetById(id)
+            };
+            return View(model);
+        }
+        //kusaklari sil
+        [HttpPost]
+        [ActionName("KusaklarSil")]
+        public ActionResult Delete(int id)
+        {
+            bool status = false;
+            if (id != 0)
+            {
+                _kusaklarService.Delete(id);
+                status = true;
+            }
+
+            return new JsonResult { Data = new { status = status } };
+        }
     }
 }
