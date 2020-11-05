@@ -35,5 +35,15 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             return Json(new { data = model.kusaklars }, JsonRequestBehavior.AllowGet);
 
         }
+        [HttpGet]
+        public ActionResult KusaklarKayit(int id)
+        {
+
+            var model = new KusaklarListViewModel
+            {
+                kusaklarGet = _kusaklarService.GetById(id)
+            };
+            return View(model);
+        }
     }
 }

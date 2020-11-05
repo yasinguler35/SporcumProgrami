@@ -9,5 +9,6 @@ namespace DevFramework.Northwind.MvcWebUI.Models
     public class KusaklarListViewModel
     {
         public List<Kusaklar> kusaklars { get; set; }
+        public Kusaklar kusaklarGet { get; set; }
     }
 }
