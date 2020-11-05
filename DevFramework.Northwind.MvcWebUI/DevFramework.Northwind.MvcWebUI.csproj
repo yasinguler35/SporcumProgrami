@@ -517,6 +517,7 @@
     <Content Include="Views\SporcuOdemeleri\SporcuOdemelerKayit.cshtml" />
     <Content Include="Views\Kusaklar\Index.cshtml" />
     <Content Include="Views\Kusaklar\KusaklarList.cshtml" />
+    <Content Include="Views\Kusaklar\KusaklarKayit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -532,7 +533,6 @@
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="UploadImage\" />
     <Folder Include="Views\Account\" />
-    <Folder Include="Views\Kusak\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
