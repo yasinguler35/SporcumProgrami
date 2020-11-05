@@ -15,7 +15,11 @@ $(document).ready(function () {
         "ajax": {
             "url": '/Sporcu/SporcuGetir',
             "type": "get",
-            "datatype": "json"
+            "datatype": "json",
+            "urlHata":'/Account/Giris',
+            "error": function () {
+                window.location.href = '/Account/Giris';
+            }
         },
         "columns": [
             { "data": "KategoriAdi", "autoWidth": true },
