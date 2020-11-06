@@ -12,6 +12,7 @@ using DevFramework.Core.Aspects.Postsharp.CacheAspects;
 using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using DevFramework.Core.Aspects.Postsharp.PerformanceAspects;
 using DevFramework.Northwind.Business.ValidationRules.FluentValidation;
+using DevFramework.Northwind.Entities.ComplexTypes;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
@@ -47,6 +48,12 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         {
             return _kusakOdemeleriDal.Get(p => p.Id == id);
         }
+
+        public List<KusakOdemeleriDetay> GetKusakOdemleriDetay()
+        {
+            return _kusakOdemeleriDal.GetKusakOdemleriDetay();
+        }
+
         [FluentValidationAspect(typeof(KusakOdemeleriValidatior))]
         public KusakOdemeleri Update(KusakOdemeleri kusakOdemeleri)
         {

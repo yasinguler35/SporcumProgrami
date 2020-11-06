@@ -29,7 +29,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         {
             var model = new KusakOdemeleriListViewModel
             {
-                kusakOdemleris = _kusakOdemleriService.GetAll()
+                kusakOdemleriDetays = _kusakOdemleriService.GetKusakOdemleriDetay()
             };
             return Json(new { data = model.kusakOdemleris }, JsonRequestBehavior.AllowGet);
 
