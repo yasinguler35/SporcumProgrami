@@ -524,6 +524,7 @@
     <Content Include="Views\Kusaklar\KusaklarList.cshtml" />
     <Content Include="Views\Kusaklar\KusaklarKayit.cshtml" />
     <Content Include="Views\Kusaklar\KusaklarSil.cshtml" />
+    <Content Include="Views\Sporcu\FotoGoster.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

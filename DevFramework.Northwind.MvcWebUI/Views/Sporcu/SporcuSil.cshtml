@@ -7,6 +7,13 @@
 @using (Html.BeginForm("SporcuSil", "Sporcu", FormMethod.Post, new { id = "popupForm" }))
 {
     @Html.HiddenFor(a => a.SporcuGet.Id)
+    if (Model.SporcuGet.FotoID != null)
+    {
+        <div class="form-group">
+
+            @Html.Action("FotoGoster", "Sporcu", new { fotoId = (Model.SporcuGet.FotoID != null) ? Model.SporcuGet.FotoID : 0 })
+        </div>
+    }
 
     <div class="form-group">
         <label>Branşı</label>

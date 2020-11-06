@@ -1,0 +1,6 @@
+﻿@model DevFramework.Northwind.MvcWebUI.Models.SporcuFotoListViewModel
+@{
+    Layout = null;
+}
+
+<p><img width="300" height="200" alt="@Model.SporcuFotoGet.Id" src="data:image/jpg;base64,@Convert.ToBase64String(Model.SporcuFotoGet.Data)" /></p>

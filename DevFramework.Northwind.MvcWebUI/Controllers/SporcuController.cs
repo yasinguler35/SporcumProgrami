@@ -133,5 +133,14 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             return new JsonResult { Data = new { status = status } };
         }
 
+        public ActionResult FotoGoster(int fotoId)
+        {
+            var model = new SporcuFotoListViewModel
+            {
+                SporcuFotoGet = _sporcuFotoService.GetById(fotoId)
+            };
+            return View(model);
+        }
+
     }
 }
