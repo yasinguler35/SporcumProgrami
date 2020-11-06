@@ -54,9 +54,9 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
             return _sporcuOdemeleriDal.Update(sporcuOdemeleri);
         }
 
-        public List<SporcuOdemeleriDetay> GetUserRoles()
+        public List<SporcuOdemeleriDetay> GetSporcuOdemleriDetay()
         {
-            return _sporcuOdemeleriDal.GetUserRoles();
+            return _sporcuOdemeleriDal.GetSporcuOdemleriDetay();
         }
     }
 }

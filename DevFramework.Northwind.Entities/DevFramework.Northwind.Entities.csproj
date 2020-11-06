@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComplexTypes\KusakOdemeleriDetay.cs" />
     <Compile Include="ComplexTypes\ProductDetail.cs" />
     <Compile Include="ComplexTypes\SporcuKategoriDetay.cs" />
     <Compile Include="ComplexTypes\SporcuOdemeleriDetay.cs" />

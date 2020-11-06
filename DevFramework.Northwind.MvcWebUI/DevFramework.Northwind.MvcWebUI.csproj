@@ -409,6 +409,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\KusaklarController.cs" />
+    <Compile Include="Controllers\KusakOdemeleriController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SporcuController.cs" />
     <Compile Include="Controllers\SporcuFotoController.cs" />
@@ -419,6 +420,7 @@
     </Compile>
     <Compile Include="Helper\HtmlHelpers.cs" />
     <Compile Include="Models\KusaklarListViewModel.cs" />
+    <Compile Include="Models\KusakOdemeleriListViewModel.cs" />
     <Compile Include="Models\ProductListViewModel.cs" />
     <Compile Include="Models\SporcuFotoListViewModel.cs" />
     <Compile Include="Models\SporcuKategoriListViewModel.cs" />
@@ -525,6 +527,7 @@
     <Content Include="Views\Kusaklar\KusaklarKayit.cshtml" />
     <Content Include="Views\Kusaklar\KusaklarSil.cshtml" />
     <Content Include="Views\Sporcu\FotoGoster.cshtml" />
+    <Content Include="Views\KusakOdemeleri\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
