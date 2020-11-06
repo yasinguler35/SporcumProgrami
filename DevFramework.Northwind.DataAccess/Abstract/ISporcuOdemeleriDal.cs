@@ -11,6 +11,6 @@ namespace DevFramework.Northwind.DataAccess.Abstract
 {
     public interface ISporcuOdemeleriDal : IEntityRepository<SporcuOdemeleri>
     {
-        List<SporcuOdemeleriDetay> GetSporcuOdemleriDetay();
+        List<SporcuOdemeleriDetay> GetSporcuOdemeleriDetay();
     }
 }

@@ -12,7 +12,7 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
 {
     public class EfSporcuOdemeleriDal : EfEntityRepositoryBase<SporcuOdemeleri, NorthwindContext>, ISporcuOdemeleriDal
     {
-        public List<SporcuOdemeleriDetay> GetSporcuOdemleriDetay()
+        public List<SporcuOdemeleriDetay> GetSporcuOdemeleriDetay()
         {
             using (NorthwindContext context = new NorthwindContext())
             {

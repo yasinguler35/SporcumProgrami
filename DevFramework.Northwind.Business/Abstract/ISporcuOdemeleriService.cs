@@ -23,6 +23,6 @@ namespace DevFramework.Northwind.Business.Abstract
         [OperationContract]
         void Delete(int Id);
 
-        List<SporcuOdemeleriDetay> GetSporcuOdemleriDetay();
+        List<SporcuOdemeleriDetay> GetSporcuOdemeleriDetay();
     }
 }
