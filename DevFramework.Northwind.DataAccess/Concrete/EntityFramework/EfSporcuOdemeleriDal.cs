@@ -12,6 +12,7 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
 {
     public class EfSporcuOdemeleriDal : EfEntityRepositoryBase<SporcuOdemeleri, NorthwindContext>, ISporcuOdemeleriDal
     {
+        //Sporcu Ödemelerini listelerken sporcu bilgilerini göstermek için birleştirildi
         public List<SporcuOdemeleriDetay> GetSporcuOdemeleriDetay()
         {
             using (NorthwindContext context = new NorthwindContext())
