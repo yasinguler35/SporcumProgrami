@@ -28,7 +28,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         {
             var model = new SporcuOdemeleriListViewModel
             {
-                sporcuOdemeleridetay = _sporcuOdemeleriService.GetSporcuOdemleriDetay().Where(i=>i.SporcuId==id).OrderByDescending(i=>i.Yil).ToList()
+                sporcuOdemeleridetay = _sporcuOdemeleriService.GetSporcuOdemeleriDetay().Where(i=>i.SporcuId==id).OrderByDescending(i=>i.Yil).ToList()
             };
         
             return Json(new { data = model.sporcuOdemeleridetay }, JsonRequestBehavior.AllowGet);
