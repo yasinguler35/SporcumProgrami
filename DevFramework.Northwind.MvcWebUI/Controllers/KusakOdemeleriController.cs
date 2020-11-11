@@ -25,13 +25,13 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             return View();
 
         }
-        public ActionResult KusakOdemleriGetir(int sporcuId)
+        public ActionResult KusakOdemeleriGetir(int Id)
         {
             var model = new KusakOdemeleriListViewModel
             {
-                kusakOdemleriDetays = _kusakOdemleriService.GetKusakOdemleriDetay().Where(i=>i.SporcuId==sporcuId).ToList()
+                kusakOdemleriDetays = _kusakOdemleriService.GetKusakOdemleriDetay().Where(i=>i.SporcuId==Id).ToList()
             };
-            return Json(new { data = model.kusakOdemleris }, JsonRequestBehavior.AllowGet);
+            return Json(new { data = model.kusakOdemleriDetays }, JsonRequestBehavior.AllowGet);
 
         }
     }
