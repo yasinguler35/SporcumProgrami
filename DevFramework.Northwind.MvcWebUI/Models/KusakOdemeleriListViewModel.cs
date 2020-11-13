@@ -12,5 +12,6 @@ namespace DevFramework.Northwind.MvcWebUI.Models
         public List<KusakOdemeleriDetay> kusakOdemleriDetays { get; set; }
         public List<KusakOdemeleri> kusakOdemleris { get; set; }
         public KusakOdemeleri kusakOdemeleriGet { get; set; }
+        public KusakOdemeleriDetay kusakOdemeleriDetayGet { get; set; }
     }
 }

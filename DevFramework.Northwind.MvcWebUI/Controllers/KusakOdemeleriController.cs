@@ -10,12 +10,12 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
 {
     public class KusakOdemeleriController : Controller
     {
-        private ISporcuService _sporcuService;
+        private IKusaklarService _kusaklarService;
         private IKusakOdemeleriService _kusakOdemleriService;
-        public KusakOdemeleriController(IKusakOdemeleriService kusakOdemleriService, ISporcuService sporcuService)
+        public KusakOdemeleriController(IKusakOdemeleriService kusakOdemleriService, IKusaklarService kusaklarService)
         {
             _kusakOdemleriService = kusakOdemleriService;
-            _sporcuService = sporcuService;
+            _kusaklarService = kusaklarService;
         }
         // GET: KusakOdemeleri
         public ActionResult Index(int ?id)
@@ -25,11 +25,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         }
         public ActionResult KusakOdemeleriList()
         {
-            //var modelfoto = new SporcuListViewModel
-            //{
-            //    Sporcus = _sporcuService.GetAll()
-            //};
-            //ViewBag.sporcugoster = new SelectList (modelfoto.Sporcus.ToList(),"Id","AdSoyad");
+         
             return View();
 
         }
@@ -41,6 +37,24 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             };
             return Json(new { data = model.kusakOdemleriDetays }, JsonRequestBehavior.AllowGet);
 
+        }
+        //kusakları getirme forma
+        [HttpGet]
+        public ActionResult KusakOdemeleriKayit(int Id)
+        {
+            //kusaklar  drobdowlisti doldurma
+            var modelkusak = new KusaklarListViewModel
+            {
+                kusaklars = _kusaklarService.GetAll()
+            };
+            ViewBag.kusaklargoster = modelkusak.kusaklars.OrderByDescending(i => i.Id);
+
+
+            var model = new KusakOdemeleriListViewModel
+            {
+               kusakOdemeleriDetayGet =_kusakOdemleriService.GetKusakOdemleriDetay().FirstOrDefault(i => i.Id == Id)
+            };
+            return View(model);
         }
     }
 }
