@@ -49,12 +49,42 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             };
             ViewBag.kusaklargoster = modelkusak.kusaklars.OrderByDescending(i => i.Id);
 
-
+            //kusaklar detay listeleme
             var model = new KusakOdemeleriListViewModel
             {
-               kusakOdemeleriDetayGet =_kusakOdemleriService.GetKusakOdemleriDetay().FirstOrDefault(i => i.Id == Id)
+               kusakOdemeleriGet =_kusakOdemleriService.GetById(Id)
             };
             return View(model);
+        }
+        [HttpPost]
+        public ActionResult KusakOdemeleriKayit(KusakOdemeleriListViewModel kusakodemeleris)
+        {
+            bool status = false;
+            if (ModelState.IsValid)
+            {
+
+                if (kusakodemeleris.kusakOdemeleriGet.Id > 0)
+                {
+                    //Edit 
+                    var model = new KusakOdemeleriListViewModel
+                    {
+                        kusakOdemeleriGet = _kusakOdemleriService.Update(kusakodemeleris.kusakOdemeleriGet)
+                    };
+                }
+                else
+                {
+                    //Save
+                    var model = new KusakOdemeleriListViewModel
+                    {
+                        kusakOdemeleriGet = _kusakOdemleriService.Add(kusakodemeleris.kusakOdemeleriGet)
+                    };
+
+                }
+
+                status = true;
+
+            }
+            return new JsonResult { Data = new { status = status } };
         }
     }
 }

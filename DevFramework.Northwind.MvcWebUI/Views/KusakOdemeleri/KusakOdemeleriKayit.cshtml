@@ -4,29 +4,33 @@
 }
 
 
-@using (Html.BeginForm("KusaklarKayit", "Kusaklar", FormMethod.Post, new { id = "popupForm" }))
+@using (Html.BeginForm("KusakOdemeleriKayit", "KusakOdemeleri", FormMethod.Post, new { id = "popupForm" }))
 {
-    if (Model.kusakOdemeleriDetayGet != null && Model.kusakOdemeleriDetayGet.Id > 0)
+    if (Model.kusakOdemeleriGet != null && Model.kusakOdemeleriGet.Id > 0)
     {
-        @Html.HiddenFor(a => a.kusakOdemeleriDetayGet.Id)
-        @Html.HiddenFor(a => a.kusakOdemeleriDetayGet.SporcuId)
-        @Html.HiddenFor(a => a.kusakOdemeleriDetayGet.KusakId)
+        @Html.HiddenFor(a => a.kusakOdemeleriGet.Id)
+        @Html.HiddenFor(a => a.kusakOdemeleriGet.SporcuId)
     }
 
-    <div class="form-group">
+    @*<div class="form-group">
         <label>Ad Soyad</label>
-        @Html.TextBoxFor(a => a.kusakOdemeleriDetayGet.AdSoyad, new { @class = "form-control", @required = "required" })
+        @Html.TextBoxFor(a => a.kusakOdemeleriGet., new { @class = "form-control", @required = "required" })
         @Html.ValidationMessageFor(a => a.kusakOdemeleriDetayGet.AdSoyad)
-    </div>
-      <div class="form-group">
+    </div>*@
+    <div class="form-group">
         <label>Ödeme Tarihi</label>
-        @Html.TextBoxFor(a => a.kusakOdemeleriDetayGet.OdemeTarihi, new { @class = "form-control", @required = "required" })
-        @Html.ValidationMessageFor(a => a.kusakOdemeleriDetayGet.OdemeTarihi)
+        @Html.TextBoxFor(a => a.kusakOdemeleriGet.OdemeTarihi, new { @Value = (Model.kusakOdemeleriGet != null) ? Model.kusakOdemeleriGet.OdemeTarihi.ToString() : DateTime.Now.ToString("dd.MM.yyyy"), @class = "form-control"})
+        @Html.ValidationMessageFor(a => a.kusakOdemeleriGet.OdemeTarihi)
+    </div>
+    <div class="form-group">
+        <label>Ödeme Tarihi</label>
+        @Html.TextBoxFor(a => a.kusakOdemeleriGet.OdemeTutari, new { @class = "form-control"})
+        @Html.ValidationMessageFor(a => a.kusakOdemeleriGet.OdemeTutari)
     </div>
     <div class="form-group">
         <label>Sporcu Kategori</label>
-        @Html.DropDownListFor(a => a.kusakOdemeleriDetayGet.KusakId, new SelectList(ViewBag.kusaklargoster, "Id", "KusakAdi"), "Seçiniz", new { @class = "form-control", @required = "required" })
-        @Html.ValidationMessageFor(a => a.kusakOdemeleriDetayGet.KusakId)
+        @Html.DropDownListFor(a => a.kusakOdemeleriGet.KusakId, new SelectList(ViewBag.kusaklargoster, "Id", "KusakAdi"), "Seçiniz", new { @class = "form-control", @required = "required" })
+        @Html.ValidationMessageFor(a => a.kusakOdemeleriGet.KusakId)
     </div>
     <div>
         <input class="btn btn-success" type="submit" value="KAYIT" />

@@ -14,5 +14,6 @@ namespace DevFramework.Northwind.Entities.ComplexTypes
         public virtual string OdemeTarihi { get; set; }
         public virtual string KusakAdi { get; set; }
         public virtual string AdSoyad { get; set; }
+        public virtual int? OdemeTutari { get; set; }
     }
 }

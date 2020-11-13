@@ -12,6 +12,7 @@ namespace DevFramework.Northwind.Entities.Concrete
         public virtual int Id { get; set; }
         public virtual int KusakId { get; set; }
         public virtual int SporcuId { get; set; }
+        public virtual int ?OdemeTutari { get; set; }
         public virtual string OdemeTarihi { get; set; }
     }
 }

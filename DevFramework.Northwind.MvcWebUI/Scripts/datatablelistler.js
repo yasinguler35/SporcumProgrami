@@ -41,7 +41,12 @@ $(document).ready(function () {
             },
             {
                    "data": "Id", "width": "50px", "render": function (data) {
-                       return '<a class="btn btn-warning"  href="/sporcuodemeleri/Aylik/' + data + '">Odeme</a>';
+                       return '<a class="btn btn-warning"  href="/sporcuodemeleri/Aylik/' + data + '">Aylik Odeme</a>';
+                   }
+            },
+            {
+                   "data": "Id", "width": "50px", "render": function (data) {
+                       return '<a class="btn btn-info"  href="/kusakodemeleri/index/' + data + '">Kuşak Odeme</a>';
                    }
             },
         ],
@@ -261,6 +266,16 @@ $(document).ready(function () {
             "datatype": "json"
         },
         "columns": [
+            {
+                "data": "Id", "width": "50px", "render": function (data) {
+                                return '<a class="popup btn btn-success" href="/SporcuOdemeleri/SporcuOdemelerKayit/' + data + '">Düzenle</a>';
+                  }
+            },
+            {
+                "data": "Id", "width": "50px", "render": function (data) {
+                    return '<a class="popup btn btn-danger"  href="/SporcuOdemeleri/SporcuOdemelerSil/' + data + '">Sil</a>';
+                }
+            },
             //{ "data": "Id", "autoWidth": true },
             { "data": "AdSoyad", "autoWidth": true },
             { "data": "Yil", "autoWidth": true },
@@ -278,16 +293,7 @@ $(document).ready(function () {
             { "data": "Kasim", "autoWidth": true },
             { "data": "Aralik", "autoWidth": true },
 
-            {
-                "data": "Id", "width": "50px", "render": function (data) {
-                    return '<a class="popup btn btn-success" href="/SporcuOdemeleri/SporcuOdemelerKayit/' + data + '">Düzenle</a>';
-                }
-            },
-            {
-                "data": "Id", "width": "50px", "render": function (data) {
-                    return '<a class="popup btn btn-danger"  href="/SporcuOdemeleri/SporcuOdemelerSil/' + data + '">Sil</a>';
-                }
-            },
+
         ]
     })
 
@@ -437,6 +443,7 @@ $(document).ready(function () {
                 { "data": "KusakAdi", "autoWidth": true },
                 { "data": "AdSoyad", "autoWidth": true },
                 { "data": "OdemeTarihi", "autoWidth": true },
+                { "data": "OdemeTutari", "autoWidth": true },
                 {
                     "data": "Id", "width": "50px", "render": function (data) {
                         return '<a class="popup btn btn-success" href="/KusakOdemeleri/KusakOdemeleriKayit/' + data + '">Düzenle</a>';

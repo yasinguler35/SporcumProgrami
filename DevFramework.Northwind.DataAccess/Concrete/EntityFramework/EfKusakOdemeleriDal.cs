@@ -26,7 +26,8 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
                                  SporcuId=ko.SporcuId,
                                  AdSoyad=s.AdSoyad,
                                  KusakAdi=k.KusakAdi,
-                                 OdemeTarihi=ko.OdemeTarihi
+                                 OdemeTarihi=ko.OdemeTarihi,
+                                 OdemeTutari=ko.OdemeTutari
                              };
                 return result.ToList();
             }
