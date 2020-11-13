@@ -10,18 +10,26 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
 {
     public class KusakOdemeleriController : Controller
     {
+        private ISporcuService _sporcuService;
         private IKusakOdemeleriService _kusakOdemleriService;
-        public KusakOdemeleriController(IKusakOdemeleriService kusakOdemleriService)
+        public KusakOdemeleriController(IKusakOdemeleriService kusakOdemleriService, ISporcuService sporcuService)
         {
             _kusakOdemleriService = kusakOdemleriService;
+            _sporcuService = sporcuService;
         }
         // GET: KusakOdemeleri
-        public ActionResult Index()
+        public ActionResult Index(int ?id)
         {
+            TempData["sporcuid"] = id;
             return View();
         }
         public ActionResult KusakOdemeleriList()
         {
+            //var modelfoto = new SporcuListViewModel
+            //{
+            //    Sporcus = _sporcuService.GetAll()
+            //};
+            //ViewBag.sporcugoster = new SelectList (modelfoto.Sporcus.ToList(),"Id","AdSoyad");
             return View();
 
         }

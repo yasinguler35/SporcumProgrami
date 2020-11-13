@@ -1,4 +1,7 @@
 ﻿
+@{
+    Layout = null;
+}
 <!DOCTYPE html>
 
 <html>
@@ -18,7 +21,10 @@
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div style="width:50%; margin:0 auto" class="tablecontainerkusakodemeleri">
+                        <label id="kusakodemeleri-sporcuid" style="display:none">@TempData["sporcuid"].ToString()</label>
                         <a class="popup btn btn-primary" href="~/KusakOdemeleri/KusakOdemeleriKayit/0" style="margin-bottom:20px; margin-top:20px;">Yeni Kuşak Ekle</a>
+                        <a class="btn btn-danger" href="~/SporcuOdemeleri/aylik/@TempData["sporcuid"].ToString()" style="margin-bottom:20px; margin-top:20px;">Sporcu Aylik Ödemesine Dön</a>
+                        <a class="btn btn-default" href="~/" style="margin-bottom:20px; margin-top:20px;">Sporcu Sayfasına Dön</a>
                         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-kusakodemelerilist">
                             <thead>
                                 <tr>

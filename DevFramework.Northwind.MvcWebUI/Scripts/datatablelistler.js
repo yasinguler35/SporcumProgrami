@@ -421,82 +421,86 @@ $(document).ready(function () {
 
 });
 
-
-//kusakodemeleri listele sil düzenle 
+    //alert($("#sporcugoster option:selected").val())
+    //kusakodemeleri listele sil düzenle 
 $(document).ready(function () {
-    var oTable = $('#dataTables-kusakodemelerilist').DataTable({
-        responsive: true,
-        "ajax": {
-            "url": '/KusakOdemeleri/KusakOdemeleriGetir/11',
-            "type": "get",
-            "datatype": "json"
-        },
-        "columns": [
-            //{ "data": "Id", "autoWidth": true },
-            { "data": "KusakAdi", "autoWidth": true },
-            { "data": "AdSoyad", "autoWidth": true },
-            { "data": "OdemeTarihi", "autoWidth": true },
-            {
-                "data": "Id", "width": "50px", "render": function (data) {
-                    return '<a class="popup btn btn-success" href="/KusakOdemeleri/KusakOdemeleriKayit/' + data + '">Düzenle</a>';
-                }
+
+        var oTable = $('#dataTables-kusakodemelerilist').DataTable({
+            responsive: true,
+            "ajax": {
+                "url": '/KusakOdemeleri/KusakOdemeleriGetir/' + +$('#kusakodemeleri-sporcuid').text(),
+                "type": "get",
+                "datatype": "json"
             },
-            {
-                "data": "Id", "width": "50px", "render": function (data) {
-                    return '<a class="popup btn btn-danger"  href="/KusakOdemeleri/KusakOdemeleriSil/' + data + '">Sil</a>';
-                }
-            },
-        ]
-    })
-
-
-    $('.tablecontainerkusakodemeleri').on('click', 'a.popup', function (e) {
-        e.preventDefault();
-        OpenPopup($(this).attr('href'));
-    })
-
-    function OpenPopup(pageUrl) {
-        var $pageContent = $('<div/>');
-        $pageContent.load(pageUrl, function () {
-            $('#popupForm', $pageContent).removeData('validator');
-            $('#popupForm', $pageContent).removeData('unobtrusiveValidation');
-            $.validator.unobtrusive.parse('form');
-
-        });
-
-        $dialog = $('<div class="popupWindow" style="overflow:auto"></div>')
-                  .html($pageContent)
-                  .dialog({
-                      draggable: false,
-                      autoOpen: false,
-                      resizable: false,
-                      model: true,
-                      title: 'Kuşak Ödemeleri Düzenleme Formu',
-                      height: 200,
-                      width: 300,
-                      close: function () {
-                          $dialog.dialog('destroy').remove();
-                      }
-                  })
-
-        $('.popupWindow').on('submit', '#popupForm', function (e) {
-            var url = $('#popupForm')[0].action;
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: $('#popupForm').serialize(),
-                success: function (data) {
-                    if (data.status) {
-                        $dialog.dialog('close');
-                        oTable.ajax.reload();
+            "columns": [
+                //{ "data": "Id", "autoWidth": true },
+                { "data": "KusakAdi", "autoWidth": true },
+                { "data": "AdSoyad", "autoWidth": true },
+                { "data": "OdemeTarihi", "autoWidth": true },
+                {
+                    "data": "Id", "width": "50px", "render": function (data) {
+                        return '<a class="popup btn btn-success" href="/KusakOdemeleri/KusakOdemeleriKayit/' + data + '">Düzenle</a>';
                     }
-                }
-            })
-
-            e.preventDefault();
+                },
+                {
+                    "data": "Id", "width": "50px", "render": function (data) {
+                        return '<a class="popup btn btn-danger"  href="/KusakOdemeleri/KusakOdemeleriSil/' + data + '">Sil</a>';
+                    }
+                },
+            ]
         })
 
-        $dialog.dialog('open');
-    }
+        $.fn.dataTable.ext.errMode = 'none';
+        $('.tablecontainerkusakodemeleri').on('click', 'a.popup', function (e) {
+            e.preventDefault();
+            OpenPopup($(this).attr('href'));
+        })
 
-});
+        function OpenPopup(pageUrl) {
+            var $pageContent = $('<div/>');
+            $pageContent.load(pageUrl, function () {
+                $('#popupForm', $pageContent).removeData('validator');
+                $('#popupForm', $pageContent).removeData('unobtrusiveValidation');
+                $.validator.unobtrusive.parse('form');
+
+            });
+
+            $dialog = $('<div class="popupWindow" style="overflow:auto"></div>')
+                      .html($pageContent)
+                      .dialog({
+                          draggable: false,
+                          autoOpen: false,
+                          resizable: false,
+                          model: true,
+                          title: 'Kuşak Ödemeleri Düzenleme Formu',
+                          height: 200,
+                          width: 300,
+                          close: function () {
+                              $dialog.dialog('destroy').remove();
+                          }
+                      })
+
+            $('.popupWindow').on('submit', '#popupForm', function (e) {
+                var url = $('#popupForm')[0].action;
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: $('#popupForm').serialize(),
+                    success: function (data) {
+                        if (data.status) {
+                            $dialog.dialog('close');
+                            oTable.ajax.reload();
+                        }
+                    }
+                })
+
+                e.preventDefault();
+            })
+
+            $dialog.dialog('open');
+        }
+
+    });
+
+
+
