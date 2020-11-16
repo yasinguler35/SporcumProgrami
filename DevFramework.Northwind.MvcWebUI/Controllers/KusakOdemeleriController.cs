@@ -20,15 +20,10 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         // GET: KusakOdemeleri
         public ActionResult Index(int ?id)
         {
-            TempData["sporcuid"] = id;
+            Session["sporcuid"] = id;
             return View();
         }
-        public ActionResult KusakOdemeleriList()
-        {
-         
-            return View();
 
-        }
         public ActionResult KusakOdemeleriGetir(int Id)
         {
             var model = new KusakOdemeleriListViewModel
@@ -73,6 +68,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
                 }
                 else
                 {
+                    kusakodemeleris.kusakOdemeleriGet.SporcuId =Convert.ToInt32(Session["sporcuid"]);
                     //Save
                     var model = new KusakOdemeleriListViewModel
                     {
