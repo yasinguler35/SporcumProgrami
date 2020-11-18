@@ -530,6 +530,7 @@
     <Content Include="Views\KusakOdemeleri\Index.cshtml" />
     <Content Include="Views\KusakOdemeleri\KusakOdemeleriList.cshtml" />
     <Content Include="Views\KusakOdemeleri\KusakOdemeleriKayit.cshtml" />
+    <Content Include="Views\KusakOdemeleri\KusakOdemeleriSil.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

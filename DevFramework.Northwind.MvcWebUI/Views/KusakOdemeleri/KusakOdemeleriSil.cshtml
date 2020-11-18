@@ -1,0 +1,22 @@
+﻿@model DevFramework.Northwind.MvcWebUI.Models.KusakOdemeleriListViewModel
+@{
+    Layout = null;
+}
+
+
+@using (Html.BeginForm("KusakOdemeleriSil", "KusakOdemeleri", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a => a.kusakOdemeleriGet.Id)
+
+
+    <div class="form-group">
+        <label>Silmek ister misiniz</label>
+          
+    </div>
+
+
+    <div>
+        <input class="btn btn-danger" type="submit" value="SİL" />
+    </div>
+}
+
