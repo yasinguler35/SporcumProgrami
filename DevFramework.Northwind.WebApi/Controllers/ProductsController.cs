@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using DevFramework.Northwind.Business.Abstract;
 using DevFramework.Northwind.Entities.Concrete;
+using BasicAuthentication;
 
 namespace DevFramework.Northwind.WebApi.Controllers
 {
@@ -17,7 +18,7 @@ namespace DevFramework.Northwind.WebApi.Controllers
         {
             _productService = productService;
         }
-
+        [BasicAuthentication]
         public List<Product> Get()
         {
             return _productService.GetAll();
