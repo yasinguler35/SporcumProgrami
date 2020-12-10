@@ -19,6 +19,7 @@ namespace DevFramework.Northwind.Business.Mappings.AutoMapper.Profiles
             //Sporcu ödemeleri mapping
             CreateMap<SporcuOdemeleri,SporcuOdemeleri>();
             CreateMap<KusakOdemeleri, KusakOdemeleri>();
+            CreateMap<Kusaklar, Kusaklar>();
         }
     }
 }

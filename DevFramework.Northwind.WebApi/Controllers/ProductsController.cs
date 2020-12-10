@@ -10,6 +10,7 @@ using BasicAuthentication;
 
 namespace DevFramework.Northwind.WebApi.Controllers
 {
+    //[BasicAuthentication]
     public class ProductsController : ApiController
     {
         private IProductService _productService;
@@ -18,10 +19,16 @@ namespace DevFramework.Northwind.WebApi.Controllers
         {
             _productService = productService;
         }
-        [BasicAuthentication]
+ 
         public List<Product> Get()
         {
             return _productService.GetAll();
+        }
+        [HttpPost]
+        [Route("api/products/getbyid")]
+        public Product Post([FromBody] Product product)
+        {
+            return _productService.GetById(Convert.ToInt32(product.ProductId));
         }
     }
 }
