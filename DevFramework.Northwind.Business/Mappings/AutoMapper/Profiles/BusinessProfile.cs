@@ -20,6 +20,7 @@ namespace DevFramework.Northwind.Business.Mappings.AutoMapper.Profiles
             CreateMap<SporcuOdemeleri,SporcuOdemeleri>();
             CreateMap<KusakOdemeleri, KusakOdemeleri>();
             CreateMap<Kusaklar, Kusaklar>();
+            CreateMap<TesisFaturam, TesisFaturam>();
         }
     }
 }
