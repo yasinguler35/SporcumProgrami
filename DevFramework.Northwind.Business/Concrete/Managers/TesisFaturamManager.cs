@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 using DevFramework.Northwind.Entities.Concrete;
 using DevFramework.Northwind.DataAccess.Abstract;
 using AutoMapper;
+using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
+using DevFramework.Northwind.Business.ValidationRules.FluentValidation;
+using DevFramework.Core.Aspects.Postsharp.CacheAspects;
+using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
+using DevFramework.Core.Aspects.Postsharp.PerformanceAspects;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
@@ -19,6 +24,8 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
             _mapper = mapper;
             _tesisFaturamDal = tesisFaturamDal;
         }
+        [FluentValidationAspect(typeof(TesisFaturamValidatior))]
+        [CacheRemoveAspect(typeof(MemoryCacheManager))]
         public TesisFaturam Add(TesisFaturam tesisFaturam)
         {
             return _tesisFaturamDal.Add(tesisFaturam);
@@ -26,22 +33,24 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
 
         public void Delete(int Id)
         {
-            throw new NotImplementedException();
+            _tesisFaturamDal.Delete(new TesisFaturam { Id = Id });
         }
-
+        [CacheAspect(typeof(MemoryCacheManager))]
+        [PerformanceCounterAspect(2)]
         public List<TesisFaturam> GetAll()
         {
-            throw new NotImplementedException();
+            var tesisfaturams = _mapper.Map<List<TesisFaturam>>(_tesisFaturamDal.GetList());
+            return tesisfaturams;
         }
 
         public TesisFaturam GetById(int id)
         {
-            throw new NotImplementedException();
+            return _tesisFaturamDal.Get(p => p.Id == id);
         }
-
+        [FluentValidationAspect(typeof(TesisFaturamValidatior))]
         public TesisFaturam Update(TesisFaturam tesisFaturam)
         {
-            throw new NotImplementedException();
+            return _tesisFaturamDal.Update(tesisFaturam);
         }
     }
 }
