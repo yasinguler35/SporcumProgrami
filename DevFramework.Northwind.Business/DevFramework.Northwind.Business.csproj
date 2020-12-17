@@ -82,6 +82,7 @@
     <Compile Include="Concrete\Managers\SporcuKategoriManager.cs" />
     <Compile Include="Concrete\Managers\SporcuManager.cs" />
     <Compile Include="Concrete\Managers\SporcuOdemeleriManager.cs" />
+    <Compile Include="Concrete\Managers\TesisFaturamManager.cs" />
     <Compile Include="Concrete\Managers\UserManager.cs" />
     <Compile Include="DependencyResolvers\Ninject\AutoMapperModule.cs" />
     <Compile Include="DependencyResolvers\Ninject\BusinessModule.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="ValidationRules\FluentValidation\SporcuKategoriValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\SporcuOdemeleriValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\SporcuValidatior.cs" />
+    <Compile Include="ValidationRules\FluentValidation\TesisFaturamValidatior.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DevFramework.Core\DevFramework.Core.csproj">
