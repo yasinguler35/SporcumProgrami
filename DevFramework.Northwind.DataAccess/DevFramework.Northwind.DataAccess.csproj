@@ -75,6 +75,7 @@
     <Compile Include="Abstract\ISporcuDal.cs" />
     <Compile Include="Abstract\ISporcuFotoDal.cs" />
     <Compile Include="Abstract\ISporcuOdemeleriDal.cs" />
+    <Compile Include="Abstract\ITesisFaturamDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Abstract\ISporcuKategoriDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
