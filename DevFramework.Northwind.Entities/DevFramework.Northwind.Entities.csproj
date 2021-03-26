@@ -48,6 +48,7 @@
     <Compile Include="ComplexTypes\TesisFaturalariDetay.cs" />
     <Compile Include="ComplexTypes\UserRoleItem.cs" />
     <Compile Include="Concrete\Category.cs" />
+    <Compile Include="Concrete\FaturaTurleri.cs" />
     <Compile Include="Concrete\Kusaklar.cs" />
     <Compile Include="Concrete\KusakOdemeleri.cs" />
     <Compile Include="Concrete\Product.cs" />

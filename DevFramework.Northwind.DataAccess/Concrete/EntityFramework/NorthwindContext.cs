@@ -28,6 +28,7 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
         public DbSet<Kusaklar> Kusaklars { get; set; }
         public DbSet<KusakOdemeleri> KusakOdemeleris { get; set; }
         public DbSet<TesisFaturam> TesisFaturams { get; set; }
+        public DbSet<FaturaTurleri> FaturaTurleries { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ProductMap());
