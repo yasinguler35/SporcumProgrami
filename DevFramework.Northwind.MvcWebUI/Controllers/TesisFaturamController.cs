@@ -23,5 +23,15 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             };
             return Json(new { data = model.tesisFaturams }, JsonRequestBehavior.AllowGet);
         }
+        // GET: Kusak
+        public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult TesisFaturamList()
+        {
+            return View();
+
+        }
     }
 }

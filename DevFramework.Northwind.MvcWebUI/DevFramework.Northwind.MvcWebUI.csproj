@@ -533,6 +533,8 @@
     <Content Include="Views\KusakOdemeleri\KusakOdemeleriList.cshtml" />
     <Content Include="Views\KusakOdemeleri\KusakOdemeleriKayit.cshtml" />
     <Content Include="Views\KusakOdemeleri\KusakOdemeleriSil.cshtml" />
+    <Content Include="Views\TesisFaturam\Index.cshtml" />
+    <Content Include="Views\TesisFaturam\TesisFaturamList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -548,7 +550,6 @@
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="UploadImage\" />
     <Folder Include="Views\Account\" />
-    <Folder Include="Views\TesisFaturam\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
