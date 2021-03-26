@@ -45,6 +45,7 @@
     <Compile Include="ComplexTypes\ProductDetail.cs" />
     <Compile Include="ComplexTypes\SporcuKategoriDetay.cs" />
     <Compile Include="ComplexTypes\SporcuOdemeleriDetay.cs" />
+    <Compile Include="ComplexTypes\TesisFaturalariDetay.cs" />
     <Compile Include="ComplexTypes\UserRoleItem.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Kusaklar.cs" />

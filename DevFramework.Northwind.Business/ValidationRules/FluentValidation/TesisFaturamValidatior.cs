@@ -12,7 +12,7 @@ namespace DevFramework.Northwind.Business.ValidationRules.FluentValidation
     {
         public TesisFaturamValidatior()
         {
-            RuleFor(p => p.TesisFaturaTuru).NotEmpty();
+            RuleFor(p => p.TesisFaturaTuruId).NotEmpty();
         }
     }
 }
