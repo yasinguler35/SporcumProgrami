@@ -10,7 +10,7 @@ namespace DevFramework.Northwind.MvcWebUI.Models
     public class TesisFaturamListViewModel
     {
         public List<TesisFaturam> tesisFaturams { get; set; }
-        public List<TesisFaturalariDetay> FaturalariDetays { get; set; }
+        public List<TesisFaturalariDetay> tesisFaturalariDetays { get; set; }
         public TesisFaturam tesisFaturamGet { get; set; }
     }
 }

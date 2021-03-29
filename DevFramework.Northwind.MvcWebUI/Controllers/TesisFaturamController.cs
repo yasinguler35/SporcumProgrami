@@ -19,9 +19,9 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         {
             var model = new TesisFaturamListViewModel
             {
-                FaturalariDetays = _tesisFaturamService.
+                tesisFaturalariDetays = _tesisFaturamService.GetTesisFaturamDetay()
             };
-            return Json(new { data = model.tesisFaturams }, JsonRequestBehavior.AllowGet);
+            return Json(new { data = model.tesisFaturalariDetays }, JsonRequestBehavior.AllowGet);
         }
         // GET: Kusak
         public ActionResult Index()
