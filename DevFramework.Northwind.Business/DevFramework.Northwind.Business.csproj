@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IFaturaTurleriService.cs" />
     <Compile Include="Abstract\IKusaklarService.cs" />
     <Compile Include="Abstract\IKusakOdemeleriService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
