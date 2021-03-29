@@ -80,6 +80,7 @@
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Abstract\ISporcuKategoriDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfFaturaTurleriDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfKusaklarDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfKusakOdemeleriDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfProductDal.cs" />
