@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\IFaturaTurleriDal.cs" />
     <Compile Include="Abstract\IKusaklarDal.cs" />
     <Compile Include="Abstract\IKusakOdemeleriDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Concrete\EntityFramework\EfTesisFaturamDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\CategoryMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\FaturaTurleriMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\KusaklarMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\KusakOdemeleriMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\ProductMap.cs" />
