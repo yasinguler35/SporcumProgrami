@@ -38,6 +38,7 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
             modelBuilder.Configurations.Add(new SporcuOdemeleriMap());
             modelBuilder.Configurations.Add(new KusaklarMap());
             modelBuilder.Configurations.Add(new KusakOdemeleriMap());
+            modelBuilder.Configurations.Add(new FaturaTurleriMap());
             //
         }
     }
