@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DevFramework.Northwind.Entities.Concrete;
+using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
+using DevFramework.Northwind.Business.ValidationRules.FluentValidation;
+using DevFramework.Core.Aspects.Postsharp.CacheAspects;
+using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
+using DevFramework.Core.Aspects.Postsharp.PerformanceAspects;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
@@ -19,7 +24,8 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
             _faturaTurleriDal = faturaTurleriDal;
             _mapper = mapper;
         }
-
+        [FluentValidationAspect(typeof(FaturaTurleriValidator))]
+        [CacheRemoveAspect(typeof(MemoryCacheManager))]
         public FaturaTurleri Add(FaturaTurleri faturaTurleri)
         {
             return _faturaTurleriDal.Add(faturaTurleri);
@@ -29,7 +35,8 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         {
             _faturaTurleriDal.Delete(new FaturaTurleri { Id = Id });
         }
-
+        [CacheAspect(typeof(MemoryCacheManager))]
+        [PerformanceCounterAspect(2)]
         public List<FaturaTurleri> GetAll()
         {
             var faturaTurleries = _mapper.Map<List<FaturaTurleri>>(_faturaTurleriDal.GetList());
@@ -40,7 +47,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         {
             return _faturaTurleriDal.Get(ft => ft.Id == id);
         }
-
+        [FluentValidationAspect(typeof(KusaklarValidatior))]
         public FaturaTurleri Update(FaturaTurleri faturaTurleri)
         {
             return _faturaTurleriDal.Update(faturaTurleri);
