@@ -13,6 +13,6 @@ namespace DevFramework.Northwind.Entities.ComplexTypes
         public virtual int TesisFaturaTuruId { get; set; }
         public virtual int? TesisFaturaTutari { get; set; }
         public virtual string IslemTarihi { get; set; }
-        public virtual int SonOdeme { get; set; }
+        public virtual string SonOdeme { get; set; }
     }
 }

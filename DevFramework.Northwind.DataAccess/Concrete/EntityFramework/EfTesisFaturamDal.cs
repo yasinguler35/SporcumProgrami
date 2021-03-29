@@ -14,7 +14,6 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
     {
         public List<TesisFaturalariDetay> GetTesisFaturamDetay()
         {
-            throw new NotImplementedException();
             using (NorthwindContext context = new NorthwindContext())
             {
                 var result = from tf in context.TesisFaturams

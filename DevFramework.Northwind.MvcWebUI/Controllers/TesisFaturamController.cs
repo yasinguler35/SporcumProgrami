@@ -13,7 +13,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         private ITesisFaturamService _tesisFaturamService;
         public TesisFaturamController(ITesisFaturamService tesisFaturamService)
         {
-            tesisFaturamService = _tesisFaturamService;
+            _tesisFaturamService = tesisFaturamService;
         }
         public ActionResult TesisFaturamGetir()
         {
