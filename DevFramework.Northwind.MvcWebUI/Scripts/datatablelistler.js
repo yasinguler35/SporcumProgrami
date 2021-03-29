@@ -540,7 +540,7 @@ $(document).ready(function () {
     })
 
 
-    $('.tablecontainertesisfaturam').on('click', 'a.popup', function (e) {
+    $('.tablecontainertesisodemeleri').on('click', 'a.popup', function (e) {
         e.preventDefault();
         OpenPopup($(this).attr('href'));
     })
