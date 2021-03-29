@@ -76,6 +76,7 @@
     <Compile Include="Abstract\ISporcuService.cs" />
     <Compile Include="Abstract\ITesisFaturamService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Concrete\Managers\FaturaTurleriManager.cs" />
     <Compile Include="Concrete\Managers\KusaklarManager.cs" />
     <Compile Include="Concrete\Managers\KusakOdemeleriManager.cs" />
     <Compile Include="Concrete\Managers\ProductManager.cs" />
