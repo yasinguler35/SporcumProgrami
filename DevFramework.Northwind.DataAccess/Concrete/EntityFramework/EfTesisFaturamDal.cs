@@ -15,22 +15,22 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
         public List<TesisFaturalariDetay> GetTesisFaturamDetay()
         {
             throw new NotImplementedException();
-            //using (NorthwindContext context = new NorthwindContext())
-            //{
-            //    var result = from tf in context.TesisFaturams
-            //                 join t in context. on ko.SporcuId equals s.Id
-            //                 select new KusakOdemeleriDetay
-            //                 {
-            //                     Id = ko.Id,
-            //                     KusakId = ko.KusakId,
-            //                     SporcuId = ko.SporcuId,
-            //                     AdSoyad = s.AdSoyad,
-            //                     KusakAdi = k.KusakAdi,
-            //                     OdemeTarihi = ko.OdemeTarihi,
-            //                     OdemeTutari = ko.OdemeTutari
-            //                 };
-            //    return result.ToList();
-            //}
+            using (NorthwindContext context = new NorthwindContext())
+            {
+                var result = from tf in context.TesisFaturams
+                             join ft in context.FaturaTurleries on tf.TesisFaturaTuruId equals ft.Id
+                             select new TesisFaturalariDetay
+                             {
+                                 Id = tf.Id,
+                                 FaturaTuru=ft.FaturaTuru,
+                                 IslemTarihi=tf.IslemTarihi,
+                                 SonOdeme=tf.SonOdeme,
+                                 TesisFaturaTuruId=tf.TesisFaturaTuruId,
+                                 TesisFaturaTutari=tf.TesisFaturaTutari
+                            
+                             };
+                return result.ToList();
+            }
         }
     }
 }
