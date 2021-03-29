@@ -12,6 +12,7 @@ using DevFramework.Northwind.Business.ValidationRules.FluentValidation;
 using DevFramework.Core.Aspects.Postsharp.CacheAspects;
 using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using DevFramework.Core.Aspects.Postsharp.PerformanceAspects;
+using DevFramework.Northwind.Entities.ComplexTypes;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
@@ -51,6 +52,11 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         public TesisFaturam Update(TesisFaturam tesisFaturam)
         {
             return _tesisFaturamDal.Update(tesisFaturam);
+        }
+
+        public List<TesisFaturalariDetay> GetTesisFaturamDetay()
+        {
+            return _tesisFaturamDal.GetTesisFaturamDetay();
         }
     }
 }

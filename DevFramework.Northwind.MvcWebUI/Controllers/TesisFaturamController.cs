@@ -19,7 +19,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         {
             var model = new TesisFaturamListViewModel
             {
-                tesisFaturams = _tesisFaturamService.GetAll()
+                FaturalariDetays = _tesisFaturamService.
             };
             return Json(new { data = model.tesisFaturams }, JsonRequestBehavior.AllowGet);
         }

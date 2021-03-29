@@ -1,4 +1,5 @@
-﻿using DevFramework.Northwind.Entities.Concrete;
+﻿using DevFramework.Northwind.Entities.ComplexTypes;
+using DevFramework.Northwind.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,5 +22,6 @@ namespace DevFramework.Northwind.Business.Abstract
         TesisFaturam Update(TesisFaturam tesisFaturam);
         [OperationContract]
         void Delete(int Id);
+        List<TesisFaturalariDetay> GetTesisFaturamDetay();
     }
 }
