@@ -522,7 +522,7 @@ $(document).ready(function () {
         },
         "columns": [
             //{ "data": "Id", "autoWidth": true },
-            { "data": "TesisFaturaTuru", "autoWidth": true },
+            { "data": "FaturaTuru", "autoWidth": true },
             { "data": "TesisFaturaTutari", "autoWidth": true },
             { "data": "IslemTarihi", "autoWidth": true },
             { "data": "SonOdeme", "autoWidth": true },
