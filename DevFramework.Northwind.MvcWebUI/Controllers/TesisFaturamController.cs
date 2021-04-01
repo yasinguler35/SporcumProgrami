@@ -33,5 +33,47 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             return View();
 
         }
+        //tesisfaturam getirme forma
+        [HttpGet]
+        public ActionResult TesisFaturamKayit(int id)
+        {
+
+            var model = new TesisFaturamListViewModel
+            {
+                tesisFaturamGet = _tesisFaturamService.GetById(id)
+            };
+            return View(model);
+        }
+        //kusak kaydetme ve güncelleme action
+        [HttpPost]
+        public ActionResult TesisFaturamKayit(TesisFaturamListViewModel tesisFaturams)
+        {
+            bool status = false;
+            if (ModelState.IsValid)
+            {
+
+                if (tesisFaturams.tesisFaturamGet.Id > 0)
+                {
+                    //Edit 
+                    var model = new TesisFaturamListViewModel
+                    {
+                        tesisFaturamGet = _tesisFaturamService.Update(tesisFaturams.tesisFaturamGet)
+                    };
+                }
+                else
+                {
+                    //Save
+                    var model = new TesisFaturamListViewModel
+                    {
+                        tesisFaturamGet = _tesisFaturamService.Add(tesisFaturams.tesisFaturamGet)
+                    };
+
+                }
+
+                status = true;
+
+            }
+            return new JsonResult { Data = new { status = status } };
+        }
     }
 }
