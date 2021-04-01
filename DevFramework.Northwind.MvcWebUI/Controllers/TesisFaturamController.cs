@@ -44,7 +44,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             };
             return View(model);
         }
-        //kusak kaydetme ve güncelleme action
+        //tesisfaturam kaydetme ve güncelleme action
         [HttpPost]
         public ActionResult TesisFaturamKayit(TesisFaturamListViewModel tesisFaturams)
         {
@@ -75,5 +75,30 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             }
             return new JsonResult { Data = new { status = status } };
         }
+        //kusaklari göster 
+        [HttpGet]
+        public ActionResult TesisFaturamSil(int id)
+        {
+            var model = new TesisFaturamListViewModel
+            {
+                tesisFaturamGet = _tesisFaturamService.GetById(id)
+            };
+            return View(model);
+        }
+        //kusaklari sil
+        [HttpPost]
+        [ActionName("TesisFaturamSil")]
+        public ActionResult Delete(int id)
+        {
+            bool status = false;
+            if (id != 0)
+            {
+                _tesisFaturamService.Delete(id);
+                status = true;
+            }
+
+            return new JsonResult { Data = new { status = status } };
+        }
+
     }
 }
