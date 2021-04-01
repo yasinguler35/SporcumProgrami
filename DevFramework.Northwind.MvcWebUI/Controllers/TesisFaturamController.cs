@@ -11,9 +11,11 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
     public class TesisFaturamController : Controller
     {
         private ITesisFaturamService _tesisFaturamService;
-        public TesisFaturamController(ITesisFaturamService tesisFaturamService)
+        private IFaturaTurleriService _faturaTurleriService;
+        public TesisFaturamController(ITesisFaturamService tesisFaturamService, IFaturaTurleriService faturaTurleriService)
         {
             _tesisFaturamService = tesisFaturamService;
+            _faturaTurleriService = faturaTurleriService;
         }
         public ActionResult TesisFaturamGetir()
         {
@@ -98,6 +100,15 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             }
 
             return new JsonResult { Data = new { status = status } };
+        }
+
+        void faturaturugetir()
+        {
+            var model = new FaturaTurleriListViewModel
+            {
+                faturaTurleris = _faturaTurleriService.GetAll()
+            };
+            ViewBag.faturaturugoster = model.faturaTurleris.OrderByDescending(i => i.Id);
         }
 
     }

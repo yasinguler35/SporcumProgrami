@@ -420,6 +420,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\HtmlHelpers.cs" />
+    <Compile Include="Models\FaturaTurleriListViewModel.cs" />
     <Compile Include="Models\KusaklarListViewModel.cs" />
     <Compile Include="Models\KusakOdemeleriListViewModel.cs" />
     <Compile Include="Models\ProductListViewModel.cs" />
