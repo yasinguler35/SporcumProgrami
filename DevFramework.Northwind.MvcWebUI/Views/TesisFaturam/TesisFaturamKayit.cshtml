@@ -25,7 +25,7 @@
     </div>
     <div class="form-group">
         <label>İşlem Tarihi</label>
-        @Html.TextBoxFor(a => a.tesisFaturamGet.IslemTarihi, "{0:d}", new { @class = "form-control", type = "date" })
+        @Html.TextBoxFor(a => a.tesisFaturamGet.IslemTarihi, "{0:d}", new { @Value = (Model.tesisFaturalariGet != null) ? Model.tesisFaturalariGet.IslemTarihi.ToString() : DateTime.Now.ToString("dd.MM.yyyy"), @class = "form-control" })
         @Html.ValidationMessageFor(a => a.tesisFaturamGet.IslemTarihi)
     </div>
     <div>
