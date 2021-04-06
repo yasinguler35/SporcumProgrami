@@ -84,7 +84,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         {
             var model = new TesisFaturamListViewModel
             {
-                tesisFaturamGet = _tesisFaturamService.GetById(id)
+                tesisFaturalariGet = _tesisFaturamService.GetTesisFaturamDetay().FirstOrDefault(i=>i.Id==id)
             };
             return View(model);
         }

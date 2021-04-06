@@ -1,0 +1,33 @@
+﻿@model DevFramework.Northwind.MvcWebUI.Models.TesisFaturamListViewModel
+@{
+    Layout = null;
+}
+
+
+@using (Html.BeginForm("TesisFaturamSil", "TesisFaturam", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a => a.tesisFaturalariGet.Id)
+
+    <div class="form-group">
+        <label>Fatura Türü</label>
+        <p>@Model.tesisFaturalariGet.FaturaTuru</p>
+    </div>
+    <div class="form-group">
+        <label>Fatura Tutari</label>
+        <p>@Model.tesisFaturalariGet.TesisFaturaTutari</p>
+    </div>
+    <div class="form-group">
+        <label>Son Ödeme</label>
+        <p>@Model.tesisFaturalariGet.SonOdeme</p>
+    </div>
+    <div class="form-group">
+        <label>İşlem Tarihi</label>
+        <p>@Model.tesisFaturalariGet.IslemTarihi</p>
+    </div>
+
+
+
+    <div>
+        <input class="btn btn-danger" type="submit" value="SİL" />
+    </div>
+}
