@@ -23,11 +23,12 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             {
                 tesisFaturalariDetays = _tesisFaturamService.GetTesisFaturamDetay()
             };
-            return Json(new { data = model.tesisFaturalariDetays }, JsonRequestBehavior.AllowGet);
+            return Json(new { data = model.tesisFaturalariDetays.OrderByDescending(i => i.Id) }, JsonRequestBehavior.AllowGet);
         }
         // GET: Kusak
         public ActionResult Index()
         {
+        
             return View();
         }
         public ActionResult TesisFaturamList()
@@ -39,7 +40,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         [HttpGet]
         public ActionResult TesisFaturamKayit(int id)
         {
-
+            faturaturugetir();
             var model = new TesisFaturamListViewModel
             {
                 tesisFaturamGet = _tesisFaturamService.GetById(id)

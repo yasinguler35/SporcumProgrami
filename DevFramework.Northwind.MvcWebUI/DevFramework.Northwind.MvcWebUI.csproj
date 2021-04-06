@@ -536,6 +536,7 @@
     <Content Include="Views\KusakOdemeleri\KusakOdemeleriSil.cshtml" />
     <Content Include="Views\TesisFaturam\Index.cshtml" />
     <Content Include="Views\TesisFaturam\TesisFaturamList.cshtml" />
+    <Content Include="Views\TesisFaturam\TesisFaturamKayit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
