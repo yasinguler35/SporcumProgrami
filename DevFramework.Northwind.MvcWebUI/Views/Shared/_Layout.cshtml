@@ -325,10 +325,18 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Spor Tesisi<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    @*<a class="active" href="blank.html">Sporcu</a>*@
-                                    @*@Html.ActionLink("Sporcu", "Index", "Sporcu", new { id = 7 },new { target = "_blank", name = "link", style = "color : red" })*@
-                                    @Html.ActionLink("Tesis Fatura Bilgileri", "Index", "TesisFaturam", null, new { @class = "" })
+                                    <a href="#">Tesis Faturaları <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            @Html.ActionLink("Tesis Türü Tanımlama", "Index", "FaturaTurleri", null, new { @class = "" })
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Tesis Fatura Bilgileri", "Index", "TesisFaturam", null, new { @class = "" })
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
                                 </li>
+
                                 <li>
 
                                     @Html.ActionLink("Tesis DemirBaş Bilgileri", "Index1", "SporcuKategori", null, new { @class = "" })
