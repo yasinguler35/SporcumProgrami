@@ -564,6 +564,7 @@
     <Content Include="Views\FaturaTurleri\Index.cshtml" />
     <Content Include="Views\FaturaTurleri\FaturaTurleriList.cshtml" />
     <Content Include="Views\FaturaTurleri\FaturaTurleriKayit.cshtml" />
+    <Content Include="Views\FaturaTurleri\FaturaTurleriSil.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
