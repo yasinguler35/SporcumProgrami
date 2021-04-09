@@ -9,5 +9,6 @@ namespace DevFramework.Northwind.MvcWebUI.Models
     public class FaturaTurleriListViewModel
     {
         public List<FaturaTurleri> faturaTurleris { get; set; }
+        public FaturaTurleri faturaTurleriGet { get; set; }
     }
 }

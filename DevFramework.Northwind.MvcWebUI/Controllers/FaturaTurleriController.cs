@@ -34,5 +34,47 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             return Json(new { data = model.faturaTurleris }, JsonRequestBehavior.AllowGet);
 
         }
+        //Fatura türlerini getirme forma
+        [HttpGet]
+        public ActionResult FaturaTurleriKayit(int id)
+        {
+
+            var model =new FaturaTurleriListViewModel
+            {
+                faturaTurleriGet = _faturaTurleriService.GetById(id)
+            };
+            return View(model);
+        }
+        //kusak kaydetme ve güncelleme action
+        [HttpPost]
+        public ActionResult FaturaTurleriKayit(FaturaTurleriListViewModel faturaTurleries)
+        {
+            bool status = false;
+            if (ModelState.IsValid)
+            {
+
+                if (faturaTurleries.faturaTurleriGet.Id > 0)
+                {
+                    //Edit 
+                    var model = new FaturaTurleriListViewModel
+                    {
+                        faturaTurleriGet = _faturaTurleriService.Update(faturaTurleries.faturaTurleriGet)
+                    };
+                }
+                else
+                {
+                    //Save
+                    var model = new FaturaTurleriListViewModel
+                    {
+                        faturaTurleriGet = _faturaTurleriService.Add(faturaTurleries.faturaTurleriGet)
+                    };
+
+                }
+
+                status = true;
+
+            }
+            return new JsonResult { Data = new { status = status } };
+        }
     }
 }
