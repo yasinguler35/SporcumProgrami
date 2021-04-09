@@ -45,7 +45,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             };
             return View(model);
         }
-        //kusak kaydetme ve güncelleme action
+        //faturaturleri kaydetme ve güncelleme action
         [HttpPost]
         public ActionResult FaturaTurleriKayit(FaturaTurleriListViewModel faturaTurleries)
         {
@@ -74,6 +74,30 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
                 status = true;
 
             }
+            return new JsonResult { Data = new { status = status } };
+        }
+        //fatura türleri göster 
+        [HttpGet]
+        public ActionResult FaturaTurleriSil(int id)
+        {
+            var model = new FaturaTurleriListViewModel
+            {
+                faturaTurleriGet = _faturaTurleriService.GetById(id)
+            };
+            return View(model);
+        }
+        //faturatürleri sil
+        [HttpPost]
+        [ActionName("FaturaTurleriSil")]
+        public ActionResult Delete(int id)
+        {
+            bool status = false;
+            if (id != 0)
+            {
+                _faturaTurleriService.Delete(id);
+                status = true;
+            }
+
             return new JsonResult { Data = new { status = status } };
         }
     }
