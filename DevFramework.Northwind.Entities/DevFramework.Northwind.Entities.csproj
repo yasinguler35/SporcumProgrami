@@ -57,6 +57,7 @@
     <Compile Include="Concrete\SporcuFoto.cs" />
     <Compile Include="Concrete\SporcuKategori.cs" />
     <Compile Include="Concrete\SporcuOdemeleri.cs" />
+    <Compile Include="Concrete\TesisDemirbaslar.cs" />
     <Compile Include="Concrete\TesisFaturam.cs" />
     <Compile Include="Concrete\User.cs" />
     <Compile Include="Concrete\UserRole.cs" />
