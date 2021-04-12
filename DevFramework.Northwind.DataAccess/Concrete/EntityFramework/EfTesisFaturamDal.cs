@@ -18,10 +18,13 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
             {
                 var result = from tf in context.TesisFaturams
                              join ft in context.FaturaTurleries on tf.TesisFaturaTuruId equals ft.Id
+                             //Left Outer Join
+                             into temp
+                             from t in temp.DefaultIfEmpty()
                              select new TesisFaturalariDetay
                              {
                                  Id = tf.Id,
-                                 FaturaTuru=ft.FaturaTuru,
+                                 FaturaTuru=t.FaturaTuru,
                                  IslemTarihi=tf.IslemTarihi,
                                  SonOdeme=tf.SonOdeme,
                                  TesisFaturaTuruId=tf.TesisFaturaTuruId,
