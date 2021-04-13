@@ -98,6 +98,7 @@
     <Compile Include="Concrete\EntityFramework\Mappings\SporcuKategoriMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\SporcuMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\SporcuOdemeleriMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\TesisDemirbaslarMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\TesisFaturamMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\UserMap.cs" />
     <Compile Include="Concrete\EntityFramework\NorthwindContext.cs" />
