@@ -88,6 +88,7 @@
     <Compile Include="Concrete\EntityFramework\EfSporcuDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfSporcuFotoDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfSporcuOdemeleriDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTesisDemirbaslarDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfTesisFaturamDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\CategoryMap.cs" />
