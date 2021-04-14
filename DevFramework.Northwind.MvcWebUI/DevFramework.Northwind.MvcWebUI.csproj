@@ -567,6 +567,8 @@
     <Content Include="Views\FaturaTurleri\FaturaTurleriList.cshtml" />
     <Content Include="Views\FaturaTurleri\FaturaTurleriKayit.cshtml" />
     <Content Include="Views\FaturaTurleri\FaturaTurleriSil.cshtml" />
+    <Content Include="Views\TesisDemirbaslar\Index.cshtml" />
+    <Content Include="Views\TesisDemirbaslar\TesisDemirbaslarList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -582,7 +584,6 @@
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="UploadImage\" />
     <Folder Include="Views\Account\" />
-    <Folder Include="Views\TesisDemirbaslar\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

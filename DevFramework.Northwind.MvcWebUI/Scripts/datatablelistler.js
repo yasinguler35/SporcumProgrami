@@ -671,7 +671,7 @@ $(document).ready(function () {
 
 //TesisDemirbaslar listele sil düzenle 
 $(document).ready(function () {
-    var oTable = $('#dataTables-faturaturlerilist').DataTable({
+    var oTable = $('#dataTables-tesisdemirbaslarlist').DataTable({
         responsive: true,
         "ajax": {
             "url": '/TesisDemirbaslar/TesisDemirbaslarGetir',
@@ -682,8 +682,8 @@ $(document).ready(function () {
             //{ "data": "Id", "autoWidth": true },
             { "data": "DemirBasAdi", "autoWidth": true },
             { "data": "AlimFiyati", "autoWidth": true },
+            { "data": "KullanimYeri", "autoWidth": true },
             { "data": "KullanimAmaci", "autoWidth": true },
-            { "data": "AlimFiyati", "autoWidth": true },
             {
                 "data": "Id", "width": "50px", "render": function (data) {
                     return '<a class="popup btn btn-success" href="/TesisDemirbaslar/TesisDemirbaslarKayit/' + data + '">Düzenle</a>';
