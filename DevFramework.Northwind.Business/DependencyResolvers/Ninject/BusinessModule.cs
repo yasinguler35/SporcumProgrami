@@ -51,6 +51,9 @@ namespace DevFramework.Northwind.Business.DependencyResolvers.Ninject
             Bind<IFaturaTurleriService>().To<FaturaTurleriManager>();
             Bind<IFaturaTurleriDal>().To<EfFaturaTurleriDal>();
 
+            Bind<ITesisDemirbaslarService>().To<TesisDemirbaslarManager>();
+            Bind<ITesisDemirbaslarDal>().To<EfTesisDemirbaslarDal>();
+
             Bind(typeof(IQueryableRepository<>)).To(typeof(EfQueryableRepository<>));
             Bind<DbContext>().To<NorthwindContext>();
             Bind<NHibernateHelper>().To<SqlServerHelper>();
