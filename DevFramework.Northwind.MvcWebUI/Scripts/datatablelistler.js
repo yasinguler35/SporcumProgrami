@@ -668,3 +668,83 @@ $(document).ready(function () {
     }
 
 });
+
+//TesisDemirbaslar listele sil düzenle 
+$(document).ready(function () {
+    var oTable = $('#dataTables-faturaturlerilist').DataTable({
+        responsive: true,
+        "ajax": {
+            "url": '/TesisDemirbaslar/TesisDemirbaslarGetir',
+            "type": "get",
+            "datatype": "json"
+        },
+        "columns": [
+            //{ "data": "Id", "autoWidth": true },
+            { "data": "DemirBasAdi", "autoWidth": true },
+            { "data": "AlimFiyati", "autoWidth": true },
+            { "data": "KullanimAmaci", "autoWidth": true },
+            { "data": "AlimFiyati", "autoWidth": true },
+            {
+                "data": "Id", "width": "50px", "render": function (data) {
+                    return '<a class="popup btn btn-success" href="/TesisDemirbaslar/TesisDemirbaslarKayit/' + data + '">Düzenle</a>';
+                }
+            },
+            {
+                "data": "Id", "width": "50px", "render": function (data) {
+                    return '<a class="popup btn btn-danger"  href="/TesisDemirbaslar/TesisDemirbaslarSil/' + data + '">Sil</a>';
+                }
+            },
+        ]
+    })
+
+
+    $('.tablecontainertesisdemirbaslar').on('click', 'a.popup', function (e) {
+        e.preventDefault();
+        OpenPopup($(this).attr('href'));
+    })
+
+    function OpenPopup(pageUrl) {
+        var $pageContent = $('<div/>');
+        $pageContent.load(pageUrl, function () {
+            $('#popupForm', $pageContent).removeData('validator');
+            $('#popupForm', $pageContent).removeData('unobtrusiveValidation');
+            $.validator.unobtrusive.parse('form');
+
+        });
+
+        $dialog = $('<div class="popupWindow" style="overflow:auto"></div>')
+                  .html($pageContent)
+                  .dialog({
+                      draggable: false,
+                      autoOpen: false,
+                      resizable: false,
+                      model: true,
+                      title: 'Fatura türleri Düzenleme Formu',
+                      height: 200,
+                      width: 300,
+                      close: function () {
+                          $dialog.dialog('destroy').remove();
+                      }
+                  })
+
+        $('.popupWindow').on('submit', '#popupForm', function (e) {
+            var url = $('#popupForm')[0].action;
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $('#popupForm').serialize(),
+                success: function (data) {
+                    if (data.status) {
+                        $dialog.dialog('close');
+                        oTable.ajax.reload();
+                    }
+                }
+            })
+
+            e.preventDefault();
+        })
+
+        $dialog.dialog('open');
+    }
+
+});
