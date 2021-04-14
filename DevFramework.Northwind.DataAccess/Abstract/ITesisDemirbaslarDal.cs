@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DevFramework.Northwind.DataAccess.Abstract
 {
-    public interface ITesisDemirbaslar : IEntityRepository<TesisDemirbaslar>
+    public interface ITesisDemirbaslarDal : IEntityRepository<TesisDemirbaslar>
     {
     }
 }
