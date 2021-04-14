@@ -11,6 +11,7 @@ using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
 using DevFramework.Core.Aspects.Postsharp.CacheAspects;
 using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using DevFramework.Core.Aspects.Postsharp.PerformanceAspects;
+using DevFramework.Northwind.Business.ValidationRules.FluentValidation;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {

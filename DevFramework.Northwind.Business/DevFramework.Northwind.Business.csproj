@@ -108,6 +108,7 @@
     <Compile Include="ValidationRules\FluentValidation\SporcuKategoriValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\SporcuOdemeleriValidatior.cs" />
     <Compile Include="ValidationRules\FluentValidation\SporcuValidatior.cs" />
+    <Compile Include="ValidationRules\FluentValidation\TesisDemirbaslarValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\TesisFaturamValidatior.cs" />
   </ItemGroup>
   <ItemGroup>
