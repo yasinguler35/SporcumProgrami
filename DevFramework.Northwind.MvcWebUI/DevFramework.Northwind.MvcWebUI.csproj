@@ -436,6 +436,7 @@
     <Compile Include="Controllers\SporcuFotoController.cs" />
     <Compile Include="Controllers\SporcuKategoriController.cs" />
     <Compile Include="Controllers\SporcuOdemeleriController.cs" />
+    <Compile Include="Controllers\TesisDemirbaslarController.cs" />
     <Compile Include="Controllers\TesisFaturamController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -449,6 +450,7 @@
     <Compile Include="Models\SporcuKategoriListViewModel.cs" />
     <Compile Include="Models\SporcuListViewModel.cs" />
     <Compile Include="Models\SporcuOdemeleriListViewModel.cs" />
+    <Compile Include="Models\TesisDemirbaslarListViewModel.cs" />
     <Compile Include="Models\TesisFaturamListViewModel.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.5.2.AssemblyAttributes.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
@@ -580,6 +582,7 @@
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="UploadImage\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Views\TesisDemirbaslar\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
