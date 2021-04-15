@@ -50,7 +50,7 @@ namespace BasicAuthentication
     public static bool IsAuthorizedUser(string Username, string Password)
     {
         // In this method we can handle our database logic here...
-        return Username == "bhushan" && Password == "demo";
+        return Username == "yasin" && Password == "1234";
     }
   }
 }
