@@ -26,6 +26,7 @@ using PostSharp.Aspects.Dependencies;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
+    [SecuredOperation(Roles = "Admin,Editor,Student")]
     public class SporcuManager : ISporcuService
     {
         private ISporcuDal _sporcuDal;

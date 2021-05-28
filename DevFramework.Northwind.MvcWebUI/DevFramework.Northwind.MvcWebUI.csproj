@@ -302,6 +302,9 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Content\themes\jquery-ui.min.css" />
+    <Content Include="dist\css\bootstrap.min.css" />
+    <Content Include="dist\css\font-awesome.min.css" />
+    <Content Include="dist\css\metisMenu.min.css" />
     <Content Include="dist\css\sb-admin-2.css" />
     <Content Include="dist\css\sb-admin-2.min.css" />
     <Content Include="dist\js\sb-admin-2.js" />
@@ -313,6 +316,7 @@
     <Content Include="obj\Debug\DevFramework.Northwind.MvcWebUI.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\DevFramework.Northwind.MvcWebUI.dll" />
     <Content Include="obj\Debug\DevFramework.Northwind.MvcWebUI.pdb" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\datatablelistler.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
@@ -325,10 +329,13 @@
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\metisMenu.min.js" />
+    <Content Include="Scripts\sb-admin-2.js" />
     <Content Include="Scripts\webGrid.js" />
     <Content Include="vendor\bootstrap-social\bootstrap-social.css" />
     <Content Include="vendor\bootstrap\css\bootstrap.css" />
@@ -569,6 +576,7 @@
     <Content Include="Views\FaturaTurleri\FaturaTurleriSil.cshtml" />
     <Content Include="Views\TesisDemirbaslar\Index.cshtml" />
     <Content Include="Views\TesisDemirbaslar\TesisDemirbaslarList.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -583,7 +591,6 @@
     <Folder Include="obj\Debug\PostSharp\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="UploadImage\" />
-    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

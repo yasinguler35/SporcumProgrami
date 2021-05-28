@@ -16,9 +16,13 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         {
             _userService = userService;
         }
-
+        public ActionResult Login()
+        {
+            return View();
+        }
         // GET: Account
-        public string Login(string userName,string password)
+        [HttpPost]
+        public ActionResult Login(string userName,string password)
         {
             var user = _userService.GetByUserNameAndPassword(userName, password);
             if (user!= null)
@@ -31,9 +35,9 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
                 false,
                 user.FirstName,
                 user.LastName);
-                return "User is authenticated!";
+                return RedirectToAction("Index", "Sporcu");
             }
-            return "User is NOT authenticated!";
+            return View();
         }
     }
 }
