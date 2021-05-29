@@ -720,8 +720,8 @@ $(document).ready(function () {
                       resizable: false,
                       model: true,
                       title: 'Fatura türleri Düzenleme Formu',
-                      height: 200,
-                      width: 300,
+                      height: 400,
+                      width: 600,
                       close: function () {
                           $dialog.dialog('destroy').remove();
                       }

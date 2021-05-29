@@ -47,7 +47,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
         }
         //tesisdemirbas kaydetme ve güncelleme action
         [HttpPost]
-        public ActionResult TesisFaturamKayit(TesisDemirbaslarListViewModel tesisDemirbas)
+        public ActionResult TesisDemirbaslarKayit(TesisDemirbaslarListViewModel tesisDemirbas)
         {
             bool status = false;
             if (ModelState.IsValid)
