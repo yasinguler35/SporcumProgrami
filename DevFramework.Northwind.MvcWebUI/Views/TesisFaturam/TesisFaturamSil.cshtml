@@ -1,4 +1,4 @@
-﻿@model DevFramework.Northwind.MvcWebUI.Models.TesisDemirbaslarListViewModel
+﻿@model DevFramework.Northwind.MvcWebUI.Models.TesisFaturamListViewModel
 @{
     Layout = null;
 }
@@ -9,8 +9,8 @@
     @Html.HiddenFor(a => a.tesisFaturalariGet.Id)
 
     <div class="form-group">
-        <label>Demirbaş Adı</label>
-        <p>@Model.te</p>
+        <label>Fatura Türü</label>
+        <p>@Model.tesisFaturalariGet.FaturaTuru</p>
     </div>
     <div class="form-group">
         <label>Fatura Tutari</label>
