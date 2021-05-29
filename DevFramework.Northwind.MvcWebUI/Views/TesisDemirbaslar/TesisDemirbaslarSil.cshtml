@@ -1,0 +1,32 @@
+﻿@model DevFramework.Northwind.MvcWebUI.Models.TesisDemirbaslarListViewModel
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("TesisDemirbaslarSil", "TesisDemirbaslar", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a => a.tesisDemirbaslarGet.Id)
+
+    <div class="form-group">
+        <label>Demirbaş Adı</label>
+        <p>@Model.tesisDemirbaslarGet.DemirBasAdi</p>
+    </div>
+    <div class="form-group">
+        <label>Kullanım Yeri</label>
+        <p>@Model.tesisDemirbaslarGet.KullanimYeri</p>
+    </div>
+    <div class="form-group">
+        <label>Kullanım Amaçı</label>
+        <p>@Model.tesisDemirbaslarGet.KullanimAmaci</p>
+    </div>
+    <div class="form-group">
+        <label>Alım Fiyatı</label>
+        <p>@Model.tesisDemirbaslarGet.AlimFiyati</p>
+    </div>
+
+
+
+    <div>
+        <input class="btn btn-danger" type="submit" value="SİL" />
+    </div>
+}

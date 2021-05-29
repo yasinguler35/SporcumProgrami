@@ -578,6 +578,7 @@
     <Content Include="Views\TesisDemirbaslar\TesisDemirbaslarList.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\TesisDemirbaslar\TesisDemirbaslarKayit.cshtml" />
+    <Content Include="Views\TesisDemirbaslar\TesisDemirbaslarSil.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
