@@ -34,5 +34,48 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             return Json(new { data = model.tesisDemirbaslars }, JsonRequestBehavior.AllowGet);
 
         }
+
+        //tesisdemirbas getirme forma
+        [HttpGet]
+        public ActionResult TesisDemirbaslarKayit(int id)
+        {
+            var model = new TesisDemirbaslarListViewModel
+            {
+                tesisDemirbaslarGet = _tesisDemirbaslar.GetById(id)
+            };
+            return View(model);
+        }
+        //tesisdemirbas kaydetme ve güncelleme action
+        [HttpPost]
+        public ActionResult TesisFaturamKayit(TesisDemirbaslarListViewModel tesisDemirbas)
+        {
+            bool status = false;
+            if (ModelState.IsValid)
+            {
+
+                if (tesisDemirbas.tesisDemirbaslarGet.Id > 0)
+                {
+                    //Edit 
+                    var model = new TesisDemirbaslarListViewModel
+                    {
+                        tesisDemirbaslarGet = _tesisDemirbaslar.Update(tesisDemirbas.tesisDemirbaslarGet)
+                    };
+                }
+                else
+                {
+                    //Save
+                    var model = new TesisDemirbaslarListViewModel
+                    {
+                        tesisDemirbaslarGet = _tesisDemirbaslar.Add(tesisDemirbas.tesisDemirbaslarGet)
+                    };
+
+                }
+
+                status = true;
+
+            }
+            return new JsonResult { Data = new { status = status } };
+        }
+       
     }
 }
