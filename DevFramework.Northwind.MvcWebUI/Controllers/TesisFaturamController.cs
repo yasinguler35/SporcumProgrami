@@ -78,7 +78,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             }
             return new JsonResult { Data = new { status = status } };
         }
-        //kusaklari göster 
+        //tesisfaturam göster 
         [HttpGet]
         public ActionResult TesisFaturamSil(int id)
         {
@@ -88,7 +88,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             };
             return View(model);
         }
-        //kusaklari sil
+        //tesisfaturam sil
         [HttpPost]
         [ActionName("TesisFaturamSil")]
         public ActionResult Delete(int id)

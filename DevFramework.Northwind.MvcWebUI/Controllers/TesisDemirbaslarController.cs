@@ -76,6 +76,31 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             }
             return new JsonResult { Data = new { status = status } };
         }
-       
+
+        //tesisdemirbas göster 
+        [HttpGet]
+        public ActionResult TesisDemirbaslarSil(int id)
+        {
+            var model = new TesisDemirbaslarListViewModel
+            {
+                tesisDemirbaslarGet = _tesisDemirbaslar.GetById(id)
+            };
+            return View(model);
+        }
+        //tesisdemirbas sil
+        [HttpPost]
+        [ActionName("TesisDemirbaslarSil")]
+        public ActionResult Delete(int id)
+        {
+            bool status = false;
+            if (id != 0)
+            {
+                _tesisDemirbaslar.Delete(id);
+                status = true;
+            }
+
+            return new JsonResult { Data = new { status = status } };
+        }
+
     }
 }
