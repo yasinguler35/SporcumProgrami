@@ -1,0 +1,41 @@
+﻿@model DevFramework.Northwind.MvcWebUI.Models.TesisDemirbaslarListViewModel
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("TesisDemirbaslarKayit", "TesisDemirbaslar", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model.tesisDemirbaslarGet != null && Model.tesisDemirbaslarGet.Id > 0)
+    {
+        @Html.HiddenFor(a => a.tesisDemirbaslarGet.Id)
+    }
+    <div class="form-group">
+        <label>Demirbaş Adı</label>
+        @Html.TextBoxFor(a => a.tesisDemirbaslarGet.DemirBasAdi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.tesisDemirbaslarGet.DemirBasAdi)
+    </div>
+    <div class="form-group">
+        <label>Kullanım Yeri</label>
+        @Html.TextBoxFor(a => a.tesisDemirbaslarGet.KullanimYeri, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.tesisDemirbaslarGet.KullanimYeri)
+    </div>
+    <div class="form-group">
+        <label>Kullanım Amaçı</label>
+        @Html.TextBoxFor(a => a.tesisDemirbaslarGet.KullanimAmaci, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.tesisDemirbaslarGet.KullanimAmaci)
+    </div>
+    <div class="form-group">
+        <label>Alım Fiyatı</label>
+        @Html.TextBoxFor(a => a.tesisDemirbaslarGet.AlimFiyati, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.tesisDemirbaslarGet.AlimFiyati)
+    </div>
+    @*<div class="form-group">
+        <label>Son Ödeme</label>
+        @Html.TextBoxFor(a => a.tesisFaturamGet.SonOdeme, "{0:d}", new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(a => a.tesisFaturamGet.SonOdeme)
+    </div>*@
+
+    <div>
+        <input class="btn btn-success" type="submit" value="KAYIT" />
+    </div>
+}
