@@ -19,6 +19,7 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework.Mappings
             Property(x => x.AlimFiyati).HasColumnName("AlimFiyati");
             Property(x => x.KullanimAmaci).HasColumnName("KullanimAmaci");
             Property(x => x.KullanimYeri).HasColumnName("KullanimYeri");
+            Property(x => x.KayitTarihi).HasColumnName("KayitTarihi");
         }
     }
 }

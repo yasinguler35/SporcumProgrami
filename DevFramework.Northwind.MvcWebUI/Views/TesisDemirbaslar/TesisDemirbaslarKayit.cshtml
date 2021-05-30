@@ -29,11 +29,11 @@
         @Html.TextBoxFor(a => a.tesisDemirbaslarGet.AlimFiyati, new { @class = "form-control" })
         @Html.ValidationMessageFor(a => a.tesisDemirbaslarGet.AlimFiyati)
     </div>
-    @*<div class="form-group">
+    <div class="form-group">
         <label>Son Ödeme</label>
-        @Html.TextBoxFor(a => a.tesisFaturamGet.SonOdeme, "{0:d}", new { @class = "form-control", type = "date" })
-        @Html.ValidationMessageFor(a => a.tesisFaturamGet.SonOdeme)
-    </div>*@
+        @Html.TextBoxFor(a => a.tesisDemirbaslarGet.KayitTarihi, "{0:d}", new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(a =>  a.tesisDemirbaslarGet.KayitTarihi)
+    </div>
 
     <div>
         <input class="btn btn-success" type="submit" value="KAYIT" />
