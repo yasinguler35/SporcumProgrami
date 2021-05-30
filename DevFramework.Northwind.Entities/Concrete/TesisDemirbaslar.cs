@@ -14,5 +14,6 @@ namespace DevFramework.Northwind.Entities.Concrete
         public virtual string DemirBasAdi { get; set; }
         public virtual string KullanimAmaci { get; set; }
         public virtual string KullanimYeri { get; set; }
+        public virtual DateTime KayitTarihi { get; set; } = DateTime.Now;
     }
 }
