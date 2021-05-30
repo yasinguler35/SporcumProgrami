@@ -684,6 +684,7 @@ $(document).ready(function () {
             { "data": "AlimFiyati", "autoWidth": true },
             { "data": "KullanimYeri", "autoWidth": true },
             { "data": "KullanimAmaci", "autoWidth": true },
+            { "data": "KayitTarihi", "autoWidth": true },
             {
                 "data": "Id", "width": "50px", "render": function (data) {
                     return '<a class="popup btn btn-success" href="/TesisDemirbaslar/TesisDemirbaslarKayit/' + data + '">Düzenle</a>';
@@ -720,8 +721,8 @@ $(document).ready(function () {
                       resizable: false,
                       model: true,
                       title: 'Fatura türleri Düzenleme Formu',
-                      height: 400,
-                      width: 600,
+                      height: 500,
+                      width: 650,
                       close: function () {
                           $dialog.dialog('destroy').remove();
                       }
